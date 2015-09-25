@@ -1,1 +1,1 @@
-from . import openacademy_course
+from . import openacademy_course, openacademy_session
