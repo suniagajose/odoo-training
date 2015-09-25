@@ -10,4 +10,6 @@ class Course(models.Model):
 
     name = fields.Char(string='Title', required=True) # Field reserverd to identified record alias
     description = fields.Text(string='Description')
-
+    responsible_id = fields.Many2one('res.users',
+                                     ondelete='set null',
+                                     String='Responsible',index=True)
