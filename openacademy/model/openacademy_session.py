@@ -1,4 +1,4 @@
-ftom openerp import models, fields
+from openerp import models, fields
 
 
 class Session(models.Model):
