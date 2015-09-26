@@ -1,4 +1,4 @@
-from openerp import models, fields
+from openerp import models, fields, api
 
 
 class Session(models.Model):
@@ -19,4 +19,16 @@ class Session(models.Model):
     course_id = fields.Many2one('openacademy.course',
         ondelete='cascade', string="Course", required=True)
     attendee_ids = fields.Many2many('res.partner', string="Attendees")
+    taken_seats = fields.Float(string="Taken seats", compute='_taken_seats')
 
+    @api.one
+    @api.depends('seats','attendee_ids')
+    def _taken_seats(self):
+        if not self.seats:
+            self.taken_seats = 0.0
+        else:
+            self.taken_seats = 100.0 * len(self.attendee_ids) / self.seats
+
+
+# vim:expandtab:smartident:tabstop=4:softtabstop=4:swiftwidth=4:
+     
