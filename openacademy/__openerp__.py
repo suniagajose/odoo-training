@@ -31,6 +31,7 @@
         'view/partner_view.xml',
         'view/partner_category_view.xml',
         'data/partner_category_data.xml',
+        'workflow/openacademy_session_workflow.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
