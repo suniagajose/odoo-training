@@ -1,31 +1,34 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* openacademy
+#	* openacademy
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-28 21:53+0000\n"
-"PO-Revision-Date: 2015-09-28 17:39-0400\n"
+"POT-Creation-Date: 2015-09-28 23:09+0000\n"
+"PO-Revision-Date: 2015-09-28 23:09+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"X-Generator: Poedit 1.5.4\n"
 
 #. module: openacademy
 #: model:ir.actions.act_window,help:openacademy.course_list_action
-msgid ""
-"<p class=\"oe_view_nocontent_create\">Create the first course\n"
+msgid "<p class=\"oe_view_nocontent_create\">Create the first course\n"
 "                </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">Crea tu primer curso\n"
+msgstr "<p class=\"oe_view_nocontent_create\">Crea tu primer curso\n"
 "                </p>\n"
 "            "
+
+#. module: openacademy
+#: code:addons/openacademy/model/openacademy_session.py:117
+#, python-format
+msgid "A session's instructor can't be an attendee"
+msgstr "El instructor de la sesion no puede ser incluido como asistente"
 
 #. module: openacademy
 #: view:openacademy.course:openacademy.course_form_view
@@ -100,6 +103,24 @@ msgstr "Etiquetas de contactos"
 #: model:ir.ui.menu,name:openacademy.contact_menu
 msgid "Contacts"
 msgstr "Contactos"
+
+#. module: openacademy
+#: code:addons/openacademy/model/openacademy_course.py:35
+#, python-format
+msgid "Copy of {}"
+msgstr "Copia de {}"
+
+#. module: openacademy
+#: code:addons/openacademy/model/openacademy_course.py:37
+#, python-format
+msgid "Copy of {} ({})"
+msgstr "Copia de {} ({})"
+
+#. module: openacademy
+#: code:addons/openacademy/model/openacademy_course.py:33
+#, python-format
+msgid "Copy of {}%"
+msgstr "Copia de {}%"
 
 #. module: openacademy
 #: field:openacademy.session,course_id:0
@@ -183,18 +204,33 @@ msgid "Group By"
 msgstr "Agrupado por"
 
 #. module: openacademy
-#: field:openacademy.course,id:0 field:openacademy.session,id:0
+#: field:openacademy.course,id:0
+#: field:openacademy.session,id:0
 #: field:openacademy.wizard,id:0
 msgid "ID"
 msgstr "ID"
 
 #. module: openacademy
-#: field:openacademy.session,instructor_id:0 field:res.partner,instructor:0
+#: code:addons/openacademy/model/openacademy_session.py:101
+#, python-format
+msgid "Incorrect 'seats' value"
+msgstr "Valor de 'asientos' incorrecto"
+
+#. module: openacademy
+#: code:addons/openacademy/model/openacademy_session.py:109
+#, python-format
+msgid "Increase seats or remove excess attendees"
+msgstr "Incremente los asientos o elimine asistentes excedentes"
+
+#. module: openacademy
+#: field:openacademy.session,instructor_id:0
+#: field:res.partner,instructor:0
 msgid "Instructor"
 msgstr "Instructor"
 
 #. module: openacademy
-#: field:openacademy.course,write_uid:0 field:openacademy.session,write_uid:0
+#: field:openacademy.course,write_uid:0
+#: field:openacademy.session,write_uid:0
 #: field:openacademy.wizard,write_uid:0
 msgid "Last Updated by"
 msgstr "Ultima actualizacion por"
@@ -364,6 +400,12 @@ msgid "The course title must be unique"
 msgstr "El titulo del curso debe ser unico"
 
 #. module: openacademy
+#: code:addons/openacademy/model/openacademy_session.py:102
+#, python-format
+msgid "The number of available seats may not be negative"
+msgstr "El numero de asientos disponible no puede ser negativo"
+
+#. module: openacademy
 #: sql_constraint:openacademy.course:0
 msgid "The title of the course should not be the description"
 msgstr "El titulo del curso debe ser distinto a la descripcion"
@@ -379,6 +421,12 @@ msgid "Title"
 msgstr "Titulo"
 
 #. module: openacademy
+#: code:addons/openacademy/model/openacademy_session.py:108
+#, python-format
+msgid "Too many attendees"
+msgstr "Excedida cantidad de asistentes"
+
+#. module: openacademy
 #: view:openacademy.session:openacademy.view_openacad_session_kanban
 msgid "duration:"
 msgstr "duración:"
@@ -387,3 +435,4 @@ msgstr "duración:"
 #: view:openacademy.wizard:openacademy.wizard_form_view
 msgid "or"
 msgstr "ó"
+
