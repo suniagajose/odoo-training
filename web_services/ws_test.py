@@ -32,6 +32,17 @@ course_id = course_ids[0]
 print "course_ids",course_ids
 
 method_name = 'create'
-new_session = {'name': 'Session from ws', 'course_id': course_id }
-new_session_id = call(model, method_name, new_session )
+responsible_id =  call('res.partner','search',[('name','=','Vauxoo')])[0]
+print "responsible_id",responsible_id
+new_session =  {
+    'name': 'Session from ws',
+    'course_id': course_id,
+    'attendee_ids': [(4,7),(4,3)]
+}
+new_session_id = call(model, method_name, new_session)
+
+#new_session = {'name': 'Session from ws', 'course_id': course_id }
+#new_session_id = call(model, method_name, new_session )
 print "new session_id",new_session_id
+
+
