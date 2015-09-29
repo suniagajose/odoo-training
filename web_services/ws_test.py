@@ -36,6 +36,7 @@ responsible_id =  call('res.partner','search',[('name','=','Vauxoo')])[0]
 print "responsible_id",responsible_id
 new_session =  {
     'name': 'Session from ws',
+    'instructor_id': responsible_id,
     'course_id': course_id,
     'attendee_ids': [(4,7),(4,3)]
 }
