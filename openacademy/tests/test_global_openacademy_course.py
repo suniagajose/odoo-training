@@ -52,10 +52,17 @@ class GlobalTestOpenAcademyCourse(TransactionCase):
         To raise constraint of unique name
         '''
         new_id = self.create_course('test1', 'test_description', None)
-        # print "new_id", new_id
+        
         with self.assertRaisesRegexp(
                 IntegrityError,
                 'duplicate key value violates unique'
                 ' constraint "openacademy_course_name_unique"'
                 ):
             new_id2 = self.create_course('test1', 'test_description', None)
+
+    def test_15_duplicate_course(self):
+        '''
+        Test to duplicate a course and check that work fine!
+        '''
+        course = self.env.ref('openacademy.course0')
+        course_id = course.copy()
