@@ -3,12 +3,13 @@
 from openerp.tests.common import TransactionCase
 from openerp.exceptions import ValidationError
 
+
 class GlobalTestOpenAcademySession(TransactionCase):
 
     # Method seudo-constructor of test setUp
     def setUp(self):
         # Define global variables to test methods
-        super(GlobalTestOpenAcademySession,self).setUp()
+        super(GlobalTestOpenAcademySession, self).setUp()
         self.partner_vauxoo = self.env.ref('base.res_partner_23')
         self.session = self.env['openacademy.session']
         self.course = self.env.ref('openacademy.course1')
@@ -47,12 +48,15 @@ class GlobalTestOpenAcademySession(TransactionCase):
         })
 
         # Check initial state
-        self.assertEqual(session_test.state, 'draft', 'Initial state should be in "draft"')
+        self.assertEqual(session_test.state, 'draft',
+                         'Initial state should be in "draft"')
 
         # Change next state and check it
         session_test.signal_workflow('button_confirm')
-        self.assertEqual(session_test.state, 'confirmed', "Signal confirm don't work fine!")
+        self.assertEqual(session_test.state, 'confirmed',
+                         "Signal confirm don't work fine!")
 
         # Change next state and check it
         session_test.signal_workflow('button_done')
-        self.assertEqual(session_test.state, 'done', "Signal done don't work fine!")
+        self.assertEqual(session_test.state, 'done',
+                         "Signal done don't work fine!")

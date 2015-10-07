@@ -8,12 +8,13 @@ class Course(models.Model):
 
     _name = 'openacademy.course'
 
-    name = fields.Char(string='Title', required=True) # Field reserverd to identified record alias
+    # name field is reserverd to identified record alias
+    name = fields.Char(string='Title', required=True)
     description = fields.Text(string='Description')
     responsible_id = fields.Many2one('res.users',
                                      ondelete='set null',
-                                     String='Responsible',index=True)
-    session_ids = fields.One2many('openacademy.session', 'course_id', 
+                                     String='Responsible', index=True)
+    session_ids = fields.One2many('openacademy.session', 'course_id',
                                   string="Sessions")
 
     _sql_constraints = [
@@ -26,7 +27,7 @@ class Course(models.Model):
          "The course title must be unique"),
     ]
 
-    @api.one # api.one send defaults params: cr, uid, id, context
+    @api.one  # api.one send defaults params: cr, uid, id, context
     def copy(self, default=None):
         default = dict(default or {})
         copied_count = self.search_count(
