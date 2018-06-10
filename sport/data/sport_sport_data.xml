@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+    <record id='sport_sport_football' model='sport.sport'>
+        <field name='name'>FOOTBALL</field>
+    </record>
+    <record id='sport_sport_baseball' model='sport.sport'>
+        <field name='name'>BASEBALL</field>
+    </record>
+    <record id='sport_sport_basketball' model='sport.sport'>
+        <field name='name'>BASKETBALL</field>
+    </record>
+</odoo>

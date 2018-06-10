@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Torneos -->
+    <record model="ir.ui.view" id="sport_tournament_form">
+        <field name="name">sport.tournament.form</field>
+        <field name="model">sport.tournament</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Torneo">
+                <group string="General">
+                    <group>
+                        <field name="name" string="Nombre del Torneo"/>
+                        <field name="country_id" string="Pais"/>
+                        <field name="state_id" string="Estado"/>
+                    </group>
+                    <group>
+                        <field name="type_id" string="Deporte"/>
+                        <field name="date_start" string="Inicio del Torneo"/>
+                        <field name="date_stop" string="Fin del Torneo"/>
+                    </group>
+                    <group string="Grupos y Equipos" colspan="4">
+                        <field name="round_ids" nolabel="1" />
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sport_tournament_tree">
+        <field name="name">sport.tournament.tree</field>
+        <field name="model">sport.tournament</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Torneos">
+                <field name="name" string="Nombre del Torneo"/>
+                <field name="type_id" string="Deporte"/>
+                <field name="date_start" string="Inicio del Torneo"/>
+                <field name="date_stop" string="Fin del Torneo"/>
+                <field name="country_id" string="Pais"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model='ir.actions.act_window' id='sport_tournament_action'>
+        <field name="name">Torneos</field>
+        <field name="res_model">sport.tournament</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Quiniela" id="sport_menu" sequence="1"/>
+    <menuitem parent="sport_menu" id="sport_tournament_menu_blue" name="Torneo" sequence="2"/>
+    <menuitem parent="sport_menu" id="sport_bet_menu_blue" name="Quiniela" sequence="1"/>
+    <menuitem parent="sport_menu" id="sport_configuration_menu_blue" name="Configuracion" sequence="3"/>
+    <menuitem action="sport_tournament_action" parent="sport_configuration_menu_blue" name="Torneos" id="sport_tournament_menu" sequence="1"/>
+
+    <!-- Grupos -->
+    <record model="ir.ui.view" id="sport_round_form">
+        <field name="name">sport.round.form</field>
+        <field name="model">sport.round</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Grupo">
+                <group>
+                    <group>
+                        <field name="name" string="Nombre del Grupo"/>
+                        <field name="tournament_id" string="Torneo"/>
+                        <field name="stage" string="Fase"/>
+                    </group>
+                    <group>
+                        <field name="matchup" string="Enfrentamientos"/>
+                        <field name="members" string="Numero de equipos"/>
+                        <field name="advance" string="Avanzan a proxima ronda"/>
+                    </group>
+                    <group string="Equipos y Partidos" colspan="4">
+                        <field name="teams_ids" nolabel="1" widget="many2many_tags" on_change="onchange_teams(teams_ids,members)" colspan="4"/>
+                        <field name="match_ids" nolabel="1" attrs="{'invisible':[('matches','=',0)]}" colspan="4">
+                            <tree>
+                                <field name="sequence" style="width: 10%%"/>
+                                <field name="name"/>
+                                <field name="date"/>
+                                <field name="state"/>
+    <!--
+                                <button name="switch_teams" type="object" icon="gtk-convert"/>
+    -->
+                            </tree>
+                        </field>
+                    </group>
+                    <field name="matches" invisible="1" />
+                    <button name="set_matches" type="object" string="Crear Partidos" attrs="{'invisible': ['|',('stage','not in',['group']),'&amp;',('matches','>',0),('stage','=','group')]}" />
+                    <group string="Tabla de Posiciones" colspan="4" attrs="{'invisible':[('standing_ids','=',[])]}">
+                        <field name="standing_ids" nolabel="1" colspan="4" readonly="1">
+                            <tree create="0" editable="bottom">
+                                <field name="sequence" string="Posicion"/>
+                                <field name="team_id" string="Equipo"/>
+                                <field name="played" string="Partidos"/>
+                                <field name="favour" string="A favor"/>
+                                <field name="against" string="En contra"/>
+                                <field name="diff" string="Diferencia"/>
+                                <field name="points" string="Puntos"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <button name="set_standings" type="object" string="Cargar Tabla de posiciones" attrs="{'invisible':[('standing_ids','!=',[])]}"/>
+                    <button name="update_standings" type="object" string="Actualizar" attrs="{'invisible':[('standing_ids','=',[])]}"/>
+                    <group string="Proxima ronda" colspan="4" attrs="{'invisible':[('advance','=',0)]}">
+                        <field name="classified_ids" nolabel="1" colspan="4">
+                            <tree editable="bottom">
+                                <field name="position" string="Posicion"/>
+                                <field name="team_id" string="Equipo"/>
+                                <field name="next_round_id" string="Nueva ronda"/>
+                                <field name="side" string="Situacion"/>
+                            </tree>
+                        </field>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sport_round_tree">
+        <field name="name">sport.round.tree</field>
+        <field name="model">sport.round</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Grupos">
+                <field name="name" string="Nombre del grupo"/>
+                <field name="teams_ids" string="Equipos"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model='ir.actions.act_window' id='sport_round_action'>
+        <field name="name">Rondas</field>
+        <field name="res_model">sport.round</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem action="sport_round_action" parent="sport_configuration_menu_blue" name="Rondas" id="sport_round_menu" sequence="2"/>
+
+    <!-- Equipos -->
+    <record model="ir.ui.view" id="sport_team_form">
+        <field name="name">sport.team.form</field>
+        <field name="model">sport.team</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Equipos">
+                <field name="name" string="Nombre"/>
+                <field name="code" string="Codigo"/>
+                <field name="type_id" string="Deporte"/>
+                <field name="country_id" string="Pais"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sport_team_tree">
+        <field name="name">sport.team.tree</field>
+        <field name="model">sport.team</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Equipos">
+                <field name="name" string="Nombre"/>
+                <field name="code" string="Codigo"/>
+                <field name="type_id" string="Deporte"/>
+                <field name="country_id" string="Pais"/>
+            </form>
+        </field>
+    </record>
+
+    <record model='ir.actions.act_window' id='sport_team_action'>
+        <field name="name">Equipos</field>
+        <field name="res_model">sport.team</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem action="sport_team_action" parent="sport_configuration_menu_blue" name="Equipos" id="sport_team_menu" sequence="3"/>
+
+    <!-- Partidos -->
+    <record model="ir.ui.view" id="sport_match_form">
+        <field name="name">sport.match.form</field>
+        <field name="model">sport.match</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Partidos">
+                <group>
+                    <group string="Informacion General" colspan="4">
+                        <group>
+                            <field name="name" string="Nombre"/>
+                            <field name="tournament_id" string="Torneo"/>
+                            <field name="round_id" string="Grupo" domain="[('tournament_id','=',tournament_id)]"/>
+                            <field name="knockout" string="Juego de Eliminatoria"/>
+                        </group>
+                        <group>
+                            <field name="sequence" string="Secuencia"/>
+                            <field name="date" string="Fecha del Partido"/>
+                            <field name="venue" string="Lugar"/>
+                            <field name="state" string="Estado"/>
+                        </group>
+                    </group>
+                    <group string="Equipo Local">
+                        <field name="home_team_id" string="Equipo Local"/>
+                        <field name="home_score" string="Anotacion Local"/>
+                        <field name="home_ot_score" string="Anotacion TE Local"/>
+                    </group>
+                    <group string="Equipo Visitante">
+                        <field name="visitor_team_id" string="Equipo Visitante"/>
+                        <field name="visitor_score" string="Anotacion Visitante"/>
+                        <field name="visitor_ot_score" string="Anotacion TE Visitante"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sport_match_tree">
+        <field name="name">sport.match.tree</field>
+        <field name="model">sport.match</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Partidos">
+                <field name="sequence" string="#"/>
+                <field name="round_id" string="Ronda"/>
+                <field name="name" string="Partido"/>
+                <field name="date" string="Fecha del Partido"/>
+                <field name="venue" string="Sede"/>
+                <field name="state" string="Estado"/>
+<!--
+                <button name="switch_teams" type="object" icon="gtk-convert"/>
+-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_match_search" model="ir.ui.view">
+        <field name="name">sport.match.search</field>
+        <field name="model">sport.match</field>
+        <field name="arch" type="xml">
+            <search string="Todos los partidos">
+                <field name="name"/>
+                <filter name="tournament_id" string="Torneo" context="{'group_by': 'tournament_id'}"/>
+                <filter name="round_id" string="Grupo" context="{'group_by': 'round_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record model='ir.actions.act_window' id='sport_match_action'>
+        <field name="name">Partidos</field>
+        <field name="res_model">sport.match</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem action="sport_match_action" parent="sport_tournament_menu_blue" name="Partidos" id="sport_match_menu" sequence="4"/>
+
+</odoo>

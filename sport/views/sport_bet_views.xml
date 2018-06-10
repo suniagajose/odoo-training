@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Apuestas -->
+    <record model="ir.ui.view" id="sport_bet_form">
+        <field name="name">sport.bet.form</field>
+        <field name="model">sport.bet</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Apuestas">
+                <group>
+                    <group>
+                        <field name="name" string="Referencia"/>
+                        <field name="partner_id" string="Nombre"/>
+                        <field name="bet_group" string="Grupo"/>
+                    </group>
+                    <group>
+                        <field name="date" string="Fecha"/>
+                        <field name="bet_type" string="Formato de Puntuación"/>
+                    </group>
+                    <group string="Líneas de Apuesta" colspan="4">
+                        <field name="bet_lines" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="tournament_id" string="Torneo"/>
+                                <field name="match_id" string="Partido" domain="[('tournament_id','=',tournament_id),('state','in',['scheduled'])]" on_change="onchange_match(match_id)"/>
+                                <field name="home_team_id" string="Local"/>
+                                <field name="home_score" string="Goles Local"/>
+                                <field name="visitor_team_id" string="Visita"/>
+                                <field name="visitor_score" string="Goles Visita"/>
+                            </tree>
+                            <form string="Líneas de Apuesta">
+                                <field name="name" string="Nombre"/>
+                                <field name="tournament_id" string="Torneo"/>
+                                <field name="match_id" string="Partido" domain="[('tournament_id','=',tournament_id)]"/>
+                                <field name="home_team_id" string="Local"/>
+                                <field name="home_score" string="Goles Local"/>
+                                <field name="visitor_team_id" string="Visita"/>
+                                <field name="visitor_score" string="Goles Visita"/>
+                            </form>
+                        </field>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sport_bet_tree">
+        <field name="name">sport.bet.tree</field>
+        <field name="model">sport.bet</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Apuestas">
+                <field name="bet_group" string="Grupo"/>
+                <field name="name" string="Referencia"/>
+                <field name="partner_id" string="Nombre"/>
+                <field name="partner_category_ids" string="Sucursal"/>
+                <field name="bet_type" string="Tipo de Apuesta"/>
+                <field name="date" string="Fecha de Creacion"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_bet_search" model="ir.ui.view">
+        <field name="name">sport.bet.search</field>
+        <field name="model">sport.bet</field>
+        <field name="arch" type="xml">
+            <search string="Apuestas">
+                <field name="name"/>
+                <filter name="group_bet_group" string="Grupo" context="{'group_by': 'bet_group' }"/>
+                <filter name="group_partner_id" string="Nombre" context="{'bet_by': 'partner_id' }"/>
+            </search>
+        </field>
+    </record>
+
+    <record model='ir.actions.act_window' id='sport_bet_action'>
+        <field name="name">Apuestas</field>
+        <field name="res_model">sport.bet</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+<!--
+        <field name="context">{'search_default_group_bet_group': 1}</field>
+-->
+    </record>
+
+    <menuitem action="sport_bet_action" parent="sport_bet_menu_blue" name="Apuestas" id="sport_bet_menu" sequence="5"/>
+
+    <!-- Tipos de Apuestas -->
+    <record model="ir.ui.view" id="sport_bet_type_form">
+        <field name="name">sport.bet.type.form</field>
+        <field name="model">sport.bet.type</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Tipos de Apuesta" version="7.0">
+                <group>
+                    <group string="Información Básica" colspan="4">
+                        <field name="name" class="oe_inline"/>
+                    </group>
+                    <group string="Puntos en partidos">
+                        <field name="result" string="Victoria fase de grupo"/>
+                        <field name="score" string="Marcador fase de grupo"/>
+                        <field name="result_in_ko" string="Victoria fase eliminatoria"/>
+                        <field name="score_in_ko" string="Marcador fase eliminatoria"/>
+                        <field name="winner_final" string="Quedar campeón"/>
+                    </group>
+                    <group string="Puntos por avances">
+                        <field name="advance_16th" string="Avanzar a 16vos"/>
+                        <field name="advance_8th" string="Avanzar a 8vos"/>
+                        <field name="advance_quarter" string="Avanzar a cuartos"/>
+                        <field name="advance_semi" string="Avanzar a semifinal"/>
+                        <field name="advance_third" string="Jugar por el tercer lugar"/>
+                        <field name="advance_final" string="Avanzar a la final"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model='ir.actions.act_window' id='sport_bet_type_action'>
+        <field name="name">Tipos de Apuesta</field>
+        <field name="res_model">sport.bet.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem action="sport_bet_type_action" parent="sport_configuration_menu_blue" name="Apuesta" id="sport_bet_config_menu" sequence="6"/>
+    <menuitem action="sport_bet_type_action" parent="sport_bet_config_menu" name="Tipos de Apuesta" id="sport_bet_type_menu" sequence="6"/>
+
+    <record model="ir.ui.view" id="sport_bet_group_form">
+        <field name="name">sport.bet.group.form</field>
+        <field name="model">sport.bet.group</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Grupo de Apuesta">
+                <group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="access" string="Acceso"/>
+                        <field name="user_id" string="Propietario" attrs="{'required':[('access','=','private')]}"/>
+                    </group>
+                    <group string="Tabla de Posiciones" colspan="4">
+                        <field name="standing_ids" nolabel="1" colspan="4" attrs="{'invisible':[('standing_ids','=',[])]}" readonly="1">
+                            <tree create="0" editable="bottom">
+                                <field name="sequence" string ="Rank"/>
+                                <field name="bet_id" string ="Referencia"/>
+                                <field name="partner_id" string ="Nombre"/>
+                                <field name="points" string ="Puntos"/>
+                            </tree>
+                        </field>
+                        <button name="update_ranking" type="object" string="Actualizar" attrs="{'invisible':[('standing_ids','=',[])]}"/>
+                        <button name="set_standings" type="object" string="Cargar Tabla de posiciones" attrs="{'invisible':[('standing_ids','!=',[])]}"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sport_bet_group_tree">
+        <field name="name">sport.bet.group.tree</field>
+        <field name="model">sport.bet.group</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Grupo de Apuesta">
+                <field name="name"/>
+<!--
+                <field name="first" string="Primer Lugar"/>
+                <field name="second" string="Segundo Lugar"/>
+                <field name="third" string="Tercer Lugar"/>
+-->
+                <field name="access" string="Privacidad"/>
+                <field name="user_id" string="Propietario"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sport_bet_group_tree2">
+        <field name="name">sport.bet.group.tree</field>
+        <field name="model">sport.bet.group</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Grupo de Apuesta" create="false" delete="false">
+                <field name="name"/>
+                <field name="first" string="Primer Lugar"/>
+                <field name="second" string="Segundo Lugar"/>
+                <field name="third" string="Tercer Lugar"/>
+                <field name="access" string="Privacidad"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model='ir.actions.act_window' id='sport_bet_group_action'>
+        <field name="name">Grupos de Apuesta</field>
+        <field name="res_model">sport.bet.group</field>
+        <field name="view_group">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model='ir.actions.act_window' id='sport_bet_group_action2'>
+        <field name="name">Grupos</field>
+        <field name="res_model">sport.bet.group</field>
+        <field name="view_group">tree</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="sport_bet_group_tree2"/>
+    </record>
+
+    <menuitem action="sport_bet_group_action" parent="sport_bet_config_menu" name="Grupos de Apuesta" id="sport_bet_group_menu" sequence="7"/>
+    <menuitem action="sport_bet_group_action2" parent="sport_bet_menu_blue" name="Grupos" id="sport_bet_group2_menu" sequence="7"/>
+
+</odoo>
