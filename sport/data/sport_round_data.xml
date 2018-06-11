@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+    <record id='russia2018_grupo_a' model='sport.round'>
+        <field name='name'>GRUPO A</field>
+        <field name='members'>4</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>2</field>
+        <field name='stage'>group</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+        <field name='team_ids' eval="[(4, ref('football_team_rus')),
+                                      (4, ref('football_team_egp')),
+                                      (4, ref('football_team_uru')),
+                                      (4, ref('football_team_sar'))]"/>
+    </record>
+    <record id='russia2018_grupo_b' model='sport.round'>
+        <field name='name'>GRUPO B</field>
+        <field name='members'>4</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>2</field>
+        <field name='stage'>group</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+        <field name='team_ids' eval="[(4, ref('football_team_esp')),
+                                      (4, ref('football_team_por')),
+                                      (4, ref('football_team_mad')),
+                                      (4, ref('football_team_irn'))]"/>
+    </record>
+    <record id='russia2018_grupo_c' model='sport.round'>
+        <field name='name'>GRUPO C</field>
+        <field name='members'>4</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>2</field>
+        <field name='stage'>group</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+        <field name='team_ids' eval="[(4, ref('football_team_fra')),
+                                      (4, ref('football_team_aus')),
+                                      (4, ref('football_team_per')),
+                                      (4, ref('football_team_den'))]"/>
+    </record>
+    <record id='russia2018_grupo_d' model='sport.round'>
+        <field name='name'>GRUPO D</field>
+        <field name='members'>4</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>2</field>
+        <field name='stage'>group</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+        <field name='team_ids' eval="[(4, ref('football_team_arg')),
+                                      (4, ref('football_team_isk')),
+                                      (4, ref('football_team_cro')),
+                                      (4, ref('football_team_nga'))]"/>
+    </record>
+    <record id='russia2018_grupo_e' model='sport.round'>
+        <field name='name'>GRUPO E</field>
+        <field name='members'>4</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>2</field>
+        <field name='stage'>group</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+        <field name='team_ids' eval="[(4, ref('football_team_bra')),
+                                      (4, ref('football_team_swi')),
+                                      (4, ref('football_team_crc')),
+                                      (4, ref('football_team_rsd'))]"/>
+    </record>
+    <record id='russia2018_grupo_f' model='sport.round'>
+        <field name='name'>GRUPO F</field>
+        <field name='members'>4</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>2</field>
+        <field name='stage'>group</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+        <field name='team_ids' eval="[(4, ref('football_team_ger')),
+                                      (4, ref('football_team_mex')),
+                                      (4, ref('football_team_swe')),
+                                      (4, ref('football_team_kor'))]"/>
+    </record>
+    <record id='russia2018_grupo_g' model='sport.round'>
+        <field name='name'>GRUPO G</field>
+        <field name='members'>4</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>2</field>
+        <field name='stage'>group</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+        <field name='team_ids' eval="[(4, ref('football_team_bel')),
+                                      (4, ref('football_team_pan')),
+                                      (4, ref('football_team_tun')),
+                                      (4, ref('football_team_eng'))]"/>
+    </record>
+    <record id='russia2018_grupo_h' model='sport.round'>
+        <field name='name'>GRUPO H</field>
+        <field name='members'>4</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>2</field>
+        <field name='stage'>group</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+        <field name='team_ids' eval="[(4, ref('football_team_pln')),
+                                      (4, ref('football_team_sen')),
+                                      (4, ref('football_team_col')),
+                                      (4, ref('football_team_jpn'))]"/>
+    </record>
+
+    <record id='russia2018_octavos_r1' model='sport.round'>
+        <field name='name'>OCTAVOS - RONDA 1</field>
+        <field name='members'>2</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>1</field>
+        <field name='stage'>8th</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+    </record>
+    <record id='russia2018_octavos_r2' model='sport.round'>
+        <field name='name'>OCTAVOS - RONDA 2</field>
+        <field name='members'>2</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>1</field>
+        <field name='stage'>8th</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+    </record>
+    <record id='russia2018_octavos_r3' model='sport.round'>
+        <field name='name'>OCTAVOS - RONDA 3</field>
+        <field name='members'>2</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>1</field>
+        <field name='stage'>8th</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+    </record>
+    <record id='russia2018_octavos_r4' model='sport.round'>
+        <field name='name'>OCTAVOS - RONDA 4</field>
+        <field name='members'>2</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>1</field>
+        <field name='stage'>8th</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+    </record>
+    <record id='russia2018_octavos_r5' model='sport.round'>
+        <field name='name'>OCTAVOS - RONDA 5</field>
+        <field name='members'>2</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>1</field>
+        <field name='stage'>8th</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+    </record>
+    <record id='russia2018_octavos_r6' model='sport.round'>
+        <field name='name'>OCTAVOS - RONDA 6</field>
+        <field name='members'>2</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>1</field>
+        <field name='stage'>8th</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+    </record>
+    <record id='russia2018_octavos_r7' model='sport.round'>
+        <field name='name'>OCTAVOS - RONDA 7</field>
+        <field name='members'>2</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>1</field>
+        <field name='stage'>8th</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+    </record>
+    <record id='russia2018_octavos_r8' model='sport.round'>
+        <field name='name'>OCTAVOS - RONDA 8</field>
+        <field name='members'>2</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>1</field>
+        <field name='stage'>8th</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+    </record>
+
+    <record id='russia2018_cuartos_r1' model='sport.round'>
+        <field name='name'>CUARTOS - RONDA 1</field>
+        <field name='members'>2</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>1</field>
+        <field name='stage'>quarter</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+    </record>
+
+    <record id='russia2018_cuartos_r2' model='sport.round'>
+        <field name='name'>CUARTOS - RONDA 2</field>
+        <field name='members'>2</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>1</field>
+        <field name='stage'>quarter</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+    </record>
+
+    <record id='russia2018_cuartos_r3' model='sport.round'>
+        <field name='name'>CUARTOS - RONDA 3</field>
+        <field name='members'>2</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>1</field>
+        <field name='stage'>quarter</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+    </record>
+
+    <record id='russia2018_cuartos_r4' model='sport.round'>
+        <field name='name'>CUARTOS - RONDA 4</field>
+        <field name='members'>2</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>1</field>
+        <field name='stage'>quarter</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+    </record>
+
+    <record id='russia2018_semifinal_r1' model='sport.round'>
+        <field name='name'>SEMIFINAL RONDA 1</field>
+        <field name='members'>2</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>2</field>
+        <field name='stage'>semi</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+    </record>
+
+    <record id='russia2018_semifinal_r2' model='sport.round'>
+        <field name='name'>SEMIFINAL RONDA 2</field>
+        <field name='members'>2</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>2</field>
+        <field name='stage'>semi</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+    </record>
+
+    <record id='russia2018_tercero' model='sport.round'>
+        <field name='name'>3ER - LUGAR</field>
+        <field name='members'>2</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>0</field>
+        <field name='stage'>third</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+    </record>
+
+    <record id='russia2018_final' model='sport.round'>
+        <field name='name'>FINAL</field>
+        <field name='members'>2</field>
+        <field name='matchup'>1</field>
+        <field name='advance'>0</field>
+        <field name='stage'>final</field>
+        <field name='tournament_id' ref='sport_tournament_russia2018'/>
+    </record>
+ </odoo>

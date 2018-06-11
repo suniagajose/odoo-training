@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+    <record id='sport_tournament_russia2018' model='sport.tournament'>
+        <field name='name'>Copa Mundial de la FIFA Rusia 2018</field>
+        <field name='date_start'>2018-06-14</field>
+        <field name='date_stop'>2018-07-15</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.ru"/>
+    </record>
+</odoo>

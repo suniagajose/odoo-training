@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+    <record id='football_team_bra' model='sport.team'>
+        <field name='name'>BRASIL</field>
+        <field name='code'>BRA</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.br"/>
+    </record>
+    <record id='football_team_cro' model='sport.team'>
+        <field name='name'>CROACIA</field>
+        <field name='code'>CRO</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.hr"/>
+    </record>
+    <record id='football_team_mex' model='sport.team'>
+        <field name='name'>MÉXICO</field>
+        <field name='code'>MEX</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.mx"/>
+    </record>
+    <record id='football_team_cmr' model='sport.team'>
+        <field name='name'>CAMERÚN</field>
+        <field name='code'>CMR</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.cm"/>
+    </record>
+    <record id='football_team_esp' model='sport.team'>
+        <field name='name'>ESPAÑA</field>
+        <field name='code'>ESP</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.es"/>
+    </record>
+    <record id='football_team_ned' model='sport.team'>
+        <field name='name'>HOLANDA</field>
+        <field name='code'>NED</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.nl"/>
+    </record>
+    <record id='football_team_chi' model='sport.team'>
+        <field name='name'>CHILE</field>
+        <field name='code'>CHI</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.cl"/>
+    </record>
+    <record id='football_team_aus' model='sport.team'>
+        <field name='name'>AUSTRALIA</field>
+        <field name='code'>AUS</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.au"/>
+    </record>
+    <record id='football_team_col' model='sport.team'>
+        <field name='name'>COLOMBIA</field>
+        <field name='code'>COL</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.co"/>
+    </record>
+    <record id='football_team_gre' model='sport.team'>
+        <field name='name'>GRECIA</field>
+        <field name='code'>GRE</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.gr"/>
+    </record>
+    <record id='football_team_civ' model='sport.team'>
+        <field name='name'>COSTA DE MARFIL</field>
+        <field name='code'>CIV</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+         <field name="country_id" ref="base.ci"/>
+    </record>
+    <record id='football_team_jpn' model='sport.team'>
+        <field name='name'>JAPÓN</field>
+        <field name='code'>JPN</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+         <field name="country_id" ref="base.jp"/>
+    </record>
+    <record id='football_team_uru' model='sport.team'>
+        <field name='name'>URUGUAY</field>
+        <field name='code'>URU</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+         <field name="country_id" ref="base.uy"/>
+    </record>
+    <record id='football_team_crc' model='sport.team'>
+        <field name='name'>COSTA RICA</field>
+        <field name='code'>CRC</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.cr"/>
+    </record>
+    <record id='football_team_eng' model='sport.team'>
+        <field name='name'>INGLATERRA</field>
+        <field name='code'>ENG</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.uk"/>
+    </record>
+    <record id='football_team_ita' model='sport.team'>
+        <field name='name'>ITALIA</field>
+        <field name='code'>ITA</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.it"/>
+    </record>
+    <record id='football_team_swi' model='sport.team'>
+        <field name='name'>SUIZA</field>
+        <field name='code'>SWI</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.ch"/>
+    </record>
+    <record id='football_team_ecu' model='sport.team'>
+        <field name='name'>ECUADOR</field>
+        <field name='code'>ECU</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.ec"/>
+    </record>
+    <record id='football_team_fra' model='sport.team'>
+        <field name='name'>FRANCIA</field>
+        <field name='code'>FRA</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.fr"/>
+    </record>
+    <record id='football_team_hon' model='sport.team'>
+        <field name='name'>HONDURAS</field>
+        <field name='code'>HON</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.hn"/>
+    </record>
+    <record id='football_team_arg' model='sport.team'>
+        <field name='name'>ARGENTINA</field>
+        <field name='code'>ARG</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.ar"/>
+    </record>
+    <record id='football_team_bih' model='sport.team'>
+        <field name='name'>BOSNIA Y HERZEGOVINA</field>
+        <field name='code'>BIH</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.ba"/>
+    </record>
+    <record id='football_team_irn' model='sport.team'>
+        <field name='name'>IRÁN</field>
+        <field name='code'>IRN</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.in"/>
+    </record>
+    <record id='football_team_nga' model='sport.team'>
+        <field name='name'>NIGERIA</field>
+        <field name='code'>NGA</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.ne"/>
+    </record>
+    <record id='football_team_ger' model='sport.team'>
+        <field name='name'>ALEMANIA</field>
+        <field name='code'>GER</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.de"/>
+    </record>
+    <record id='football_team_por' model='sport.team'>
+        <field name='name'>PORTUGAL</field>
+        <field name='code'>POR</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.pt"/>
+    </record>
+    <record id='football_team_gha' model='sport.team'>
+        <field name='name'>GHANA</field>
+        <field name='code'>GHA</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.gh"/>
+    </record>
+    <record id='football_team_usa' model='sport.team'>
+        <field name='name'>ESTADOS UNIDOS</field>
+        <field name='code'>USA</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.us"/>
+    </record>
+    <record id='football_team_bel' model='sport.team'>
+        <field name='name'>BÉLGICA</field>
+        <field name='code'>BEL</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.be"/>
+    </record>
+    <record id='football_team_alg' model='sport.team'>
+        <field name='name'>ARGELIA</field>
+        <field name='code'>ALG</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.dz"/>
+    </record>
+    <record id='football_team_rus' model='sport.team'>
+        <field name='name'>RUSIA</field>
+        <field name='code'>RUS</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.ru"/>
+    </record>
+    <record id='football_team_kor' model='sport.team'>
+        <field name='name'>REPÚBLICA DE COREA</field>
+        <field name='code'>KOR</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.kr"/>
+    </record>
+    <record id='football_team_egp' model='sport.team'>
+        <field name='name'>EGIPTO</field>
+        <field name='code'>EGP</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.eg"/>
+    </record>
+    <record id='football_team_sar' model='sport.team'>
+        <field name='name'>ARABIA SAUDI</field>
+        <field name='code'>SAR</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.sa"/>
+    </record>
+    <record id='football_team_mad' model='sport.team'>
+        <field name='name'>MARRUECOS</field>
+        <field name='code'>MAD</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.ma"/>
+    </record>
+    <record id='football_team_per' model='sport.team'>
+        <field name='name'>PERU</field>
+        <field name='code'>PER</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.pe"/>
+    </record>
+    <record id='football_team_den' model='sport.team'>
+        <field name='name'>DINAMARCA</field>
+        <field name='code'>DEN</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.dk"/>
+    </record>
+    <record id='football_team_isk' model='sport.team'>
+        <field name='name'>ISLANDIA</field>
+        <field name='code'>ISK</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.is"/>
+    </record>
+    <record id='football_team_rsd' model='sport.team'>
+        <field name='name'>SERBIA</field>
+        <field name='code'>RSD</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.rs"/>
+    </record>
+    <record id='football_team_swe' model='sport.team'>
+        <field name='name'>SUECIA</field>
+        <field name='code'>SWE</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.se"/>
+    </record>
+    <record id='football_team_pan' model='sport.team'>
+        <field name='name'>PANAMA</field>
+        <field name='code'>PAN</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.pa"/>
+    </record>
+    <record id='football_team_tun' model='sport.team'>
+        <field name='name'>TUNEZ</field>
+        <field name='code'>TUN</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.tn"/>
+    </record>
+    <record id='football_team_pln' model='sport.team'>
+        <field name='name'>POLONIA</field>
+        <field name='code'>PLN</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.pl"/>
+    </record>
+    <record id='football_team_sen' model='sport.team'>
+        <field name='name'>SENEGAL</field>
+        <field name='code'>SEN</field>
+        <field name='sport_id' ref='sport_sport_football'/>
+        <field name="country_id" ref="base.sn"/>
+    </record>
+</odoo>

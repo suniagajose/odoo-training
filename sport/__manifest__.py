@@ -13,10 +13,14 @@ Details coming soon.
         'base',
     ],
     'data' : [
+        # Data
         'data/sport_sport_data.xml',
+        'data/sport_tournament_data.xml',
+        'data/sport_team_data.xml',
+        'data/sport_round_data.xml',
+
+        # Views
         'views/sport_views.xml',
-     ],
-    'demo' : [
     ],
     'installable' : True,
     'application' : True,
