@@ -2,8 +2,8 @@
 
 import itertools
 from datetime import datetime
-from operator import itemgetter, attrgetter
-from odoo.exceptions import UserError, ValidationError
+from operator import attrgetter
+from odoo.exceptions import ValidationError
 from odoo import api, fields, models, _
 
 
@@ -349,7 +349,6 @@ class SportMatch(models.Model):
 
     @api.depends('home_team_id', 'visitor_team_id', 'state')
     def _compute_name(self):
-        round_classified = self.env['sport.round.classified']
         for match in self:
             match.name = _('None vs. None')
             if not match.home_team_id or not match.visitor_team_id:
@@ -390,7 +389,7 @@ class SportMatch(models.Model):
             #         side['visitor'] or visitor_team_name)
             if match.date:
                 try:
-                    d = datetime.strptime(date, '%Y-%m-%d %H:%M')
+                    d = datetime.strptime(match.date, '%Y-%m-%d %H:%M')
                     name = name + ', ' + d.strftime('%d %b')
                 except:
                     pass

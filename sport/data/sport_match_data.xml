@@ -487,7 +487,7 @@
         <field name='venue'>Fisht Stadium, Sochi</field>
         <field name='state'>scheduled</field>
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
-        <field name='round_id' ref="octavos_r1"/>
+        <field name='round_id' ref="russia2018_octavos_r1"/>
     </record>
     <record id='russia2018_match_50' model='sport.match'>
         <field name='sequence'>50</field>
@@ -495,7 +495,7 @@
         <field name='venue'>Kazan Arena, Kazan</field>
         <field name='state'>scheduled</field>
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
-        <field name='round_id' ref="octavos_r2"/>
+        <field name='round_id' ref="russia2018_octavos_r2"/>
     </record>
     <record id='russia2018_match_51' model='sport.match'>
         <field name='sequence'>51</field>
@@ -503,7 +503,7 @@
         <field name='venue'>Luzhniki Stadium, Moscow</field>
         <field name='state'>scheduled</field>
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
-        <field name='round_id' ref="octavos_r3"/>
+        <field name='round_id' ref="russia2018_octavos_r3"/>
     </record>
     <record id='russia2018_match_52' model='sport.match'>
         <field name='sequence'>52</field>
@@ -511,7 +511,7 @@
         <field name='venue'>Nizhny Novgorod Stadium, Nizhny Novgorod</field>
         <field name='state'>scheduled</field>
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
-        <field name='round_id' ref="octavos_r4"/>
+        <field name='round_id' ref="russia2018_octavos_r4"/>
     </record>
     <record id='russia2018_match_53' model='sport.match'>
         <field name='sequence'>53</field>
@@ -519,7 +519,7 @@
         <field name='venue'>Samara Arena, Samara</field>
         <field name='state'>scheduled</field>
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
-        <field name='round_id' ref="octavos_r5"/>
+        <field name='round_id' ref="russia2018_octavos_r5"/>
     </record>
     <record id='russia2018_match_54' model='sport.match'>
         <field name='sequence'>54</field>
@@ -527,7 +527,7 @@
         <field name='venue'>Rostov Arena, Rostov-on-Don</field>
         <field name='state'>scheduled</field>
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
-        <field name='round_id' ref="octavos_r6"/>
+        <field name='round_id' ref="russia2018_octavos_r6"/>
     </record>
     <record id='russia2018_match_55' model='sport.match'>
         <field name='sequence'>55</field>
@@ -535,7 +535,7 @@
         <field name='venue'>Saint Petersburg Stadium, Saint Petersburg</field>
         <field name='state'>scheduled</field>
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
-        <field name='round_id' ref="octavos_r7"/>
+        <field name='round_id' ref="russia2018_octavos_r7"/>
     </record>
     <record id='russia2018_match_56' model='sport.match'>
         <field name='sequence'>56</field>
@@ -543,7 +543,7 @@
         <field name='venue'>Spartak Stadium, Moscow</field>
         <field name='state'>scheduled</field>
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
-        <field name='round_id' ref="octavos_r8"/>
+        <field name='round_id' ref="russia2018_octavos_r8"/>
     </record>
     <record id='russia2018_match_57' model='sport.match'>
         <field name='sequence'>57</field>
@@ -551,7 +551,7 @@
         <field name='venue'>Nizhny Novgorod Stadium, Nizhny Novgorod</field>
         <field name='state'>scheduled</field>
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
-        <field name='round_id' ref="cuartos_r1"/>
+        <field name='round_id' ref="russia2018_cuartos_r1"/>
     </record>
     <record id='russia2018_match_58' model='sport.match'>
         <field name='sequence'>58</field>
@@ -559,7 +559,7 @@
         <field name='venue'>Kazan Arena, Kazan</field>
         <field name='state'>scheduled</field>
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
-        <field name='round_id' ref="cuartos_r2"/>
+        <field name='round_id' ref="russia2018_cuartos_r2"/>
     </record>
     <record id='russia2018_match_59' model='sport.match'>
         <field name='sequence'>59</field>
@@ -567,7 +567,7 @@
         <field name='venue'>Fisht Stadium, Sochi</field>
         <field name='state'>scheduled</field>
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
-        <field name='round_id' ref="cuartos_r3"/>
+        <field name='round_id' ref="russia2018_cuartos_r3"/>
     </record>
     <record id='russia2018_match_60' model='sport.match'>
         <field name='sequence'>60</field>
@@ -575,7 +575,7 @@
         <field name='venue'>Samara Arena, Samara</field>
         <field name='state'>scheduled</field>
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
-        <field name='round_id' ref="cuartos_r4"/>
+        <field name='round_id' ref="russia2018_cuartos_r4"/>
     </record>
     <record id='russia2018_match_61' model='sport.match'>
         <field name='sequence'>61</field>
@@ -583,7 +583,7 @@
         <field name='venue'>Saint Petersburg Stadium, Saint Petersburg</field>
         <field name='state'>scheduled</field>
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
-        <field name='round_id' ref="semifinal_r1"/>
+        <field name='round_id' ref="russia2018_semifinal_r1"/>
     </record>
     <record id='russia2018_match_62' model='sport.match'>
         <field name='sequence'>62</field>
@@ -591,7 +591,7 @@
         <field name='venue'>Luzhniki Stadium, Moscow</field>
         <field name='state'>scheduled</field>
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
-        <field name='round_id' ref="semifinal_r2"/>
+        <field name='round_id' ref="russia2018_semifinal_r2"/>
     </record>
     <record id='russia2018_match_63' model='sport.match'>
         <field name='sequence'>63</field>
@@ -599,7 +599,7 @@
         <field name='venue'>Saint Petersburg Stadium, Saint Petersburg</field>
         <field name='state'>scheduled</field>
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
-        <field name='round_id' ref="tercero"/>
+        <field name='round_id' ref="russia2018_tercero"/>
     </record>
     <record id='russia2018_match_64' model='sport.match'>
         <field name='sequence'>64</field>
@@ -607,6 +607,6 @@
         <field name='venue'>Luzhniki Stadium, Moscow</field>
         <field name='state'>scheduled</field>
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
-        <field name='round_id' ref="final"/>
+        <field name='round_id' ref="russia2018_final"/>
     </record>
 </odoo>
