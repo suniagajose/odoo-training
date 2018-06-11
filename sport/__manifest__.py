@@ -18,6 +18,7 @@ Details coming soon.
         'data/sport_tournament_data.xml',
         'data/sport_team_data.xml',
         'data/sport_round_data.xml',
+        'data/sport_match_data.xml',
 
         # Views
         'views/sport_views.xml',

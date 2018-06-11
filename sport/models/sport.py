@@ -49,7 +49,7 @@ class SportRound(models.Model):
         return l
 
     @api.multi
-    def _load_matches(self):
+    def load_matches(self):
         self.ensure_one()
         matches = []
         seq = 1
@@ -69,7 +69,7 @@ class SportRound(models.Model):
         return self.write({'match_ids': matches})
 
     @api.multi
-    def _load_standings(self):
+    def load_standings(self):
         self.ensure_one()
         standing_ids = []
         # get teams in round
@@ -93,7 +93,7 @@ class SportRound(models.Model):
         return self.write({'standing_ids': standing_ids})
 
     @api.multi
-    def _update_standings(self):
+    def update_standings(self):
         self.ensure_one()
         # order standing object by attrs: point, diff desc
         newlist = sorted(self.standing_ids, key=attrgetter('points', 'diff', 'favour'), reverse=True)
@@ -226,6 +226,43 @@ class SportStanding(models.Model):
             standing.against = against
 
     @api.multi
+    def _compute_wins(self):
+        for standing in self.filtered(lambda x: x.round_id != False):
+            wins = 0
+            for match in standing.round_id.match_ids:
+                if (match.state in ['started', 'done'] and
+                        standing.team_id.id == match.home_team_id.id):
+                    wins += match.diff > 0 and 1 or 0
+                elif (match.state in ['started', 'done'] and
+                        standing.team_id.id == match.visitor_team_id.id):
+                    wins += match.diff < 0 and 1 or 0
+            standing.wins = wins
+
+    @api.multi
+    def _compute_losses(self):
+        for standing in self.filtered(lambda x: x.round_id != False):
+            losses = 0
+            for match in standing.round_id.match_ids:
+                if (match.state in ['started', 'done'] and
+                        standing.team_id.id == match.home_team_id.id):
+                    losses += match.diff < 0 and 1 or 0
+                elif (match.state in ['started', 'done'] and
+                        standing.team_id.id == match.visitor_team_id.id):
+                    losses += match.diff > 0 and 1 or 0
+            standing.losses = losses
+
+    @api.multi
+    def _compute_ties(self):
+        for standing in self.filtered(lambda x: x.round_id != False):
+            ties = 0
+            for match in standing.round_id.match_ids:
+                if (match.state in ['started', 'done'] and (
+                        standing.team_id.id == match.home_team_id.id or
+                        standing.team_id.id == match.visitor_team_id.id)):
+                    ties += match.diff == 0 and 1 or 0
+            standing.ties = ties
+
+    @api.multi
     def _compute_points(self):
         for standing in self.filtered(lambda x: x.round_id != False):
             points = 0
@@ -244,10 +281,11 @@ class SportStanding(models.Model):
         for standing in self.filtered(lambda x: x.round_id != False):
             played = 0
             for match in standing.round_id.match_ids:
-                if (match.state in ['started', 'done'] and
+                if (match.state in ['started', 'done'] and (
                         standing.team_id.id == match.home_team_id.id or
-                        standing.team_id.id == match.visitor_team_id.id):
+                        standing.team_id.id == match.visitor_team_id.id)):
                     played += 1
+
             standing.played = played
 
     def _compute_diff(self):
@@ -267,6 +305,9 @@ class SportStanding(models.Model):
     tournament_id = fields.Many2one('sport.tournament', 'Tournament')
     round_id = fields.Many2one('sport.round', 'Round')
     team_id = fields.Many2one('sport.team', 'Team')
+    wins = fields.Integer(compute='_compute_wins')
+    ties = fields.Integer(compute='_compute_ties')
+    losses = fields.Integer(compute='_compute_losses')
     favour = fields.Integer(compute='_compute_favour', string='Score Favour')
     against = fields.Integer(compute='_compute_against', string='Score Against')
     points = fields.Integer(compute='_compute_points', string='Team Points')
@@ -326,13 +367,13 @@ class SportMatch(models.Model):
                     match.visitor_score,
                     match.visitor_ot_score,
                     visitor_team_name)
-            elif state in ['done','started']:
+            elif match.state in ['done', 'started']:
                 name = '%s %d - %d %s%s' % (
                     home_team_name,
                     match.home_score,
                     match.visitor_score,
                     visitor_team_name,
-                    state == 'started' and _(', en curso') or '')
+                    match.state == 'started' and _(', en curso') or '')
 
             # next_round = round_classified.search([('next_round_id','=', match.round_id.id)])
             # if next_round and (home_team_name in [False, None] or visitor_team_name in [False, None]):
@@ -413,12 +454,12 @@ class SportMatch(models.Model):
     @api.multi
     def write(self, vals):
         res = super(SportMatch, self).write(vals)
-        bet_group = self.env['sport.bet.group']
+        # bet_group = self.env['sport.bet.group']
         for match in self:
             # order standing object by attrs: point, diff desc
-            match.round_id._update_standings()
+            match.round_id.update_standings()
             # order group of bets object by attr: point desc
-            bet_group.search([]).update_ranking()
+            # bet_group.search([]).update_ranking()
             if match.round_id.done:
                 # assign classified teams to matches automatically
                 for classified in match.round_id.classified_ids:

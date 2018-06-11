@@ -95,6 +95,9 @@
                                 <field name="sequence" string="Posicion"/>
                                 <field name="team_id" string="Equipo"/>
                                 <field name="played" string="Partidos"/>
+                                <field name="wins" string="Victorias"/>
+                                <field name="ties" string="Empates"/>
+                                <field name="losses" string="Derrotas"/>
                                 <field name="favour" string="A favor"/>
                                 <field name="against" string="En contra"/>
                                 <field name="diff" string="Diferencia"/>
@@ -102,7 +105,7 @@
                             </tree>
                         </field>
                     </group>
-                    <button name="set_standings" type="object" string="Cargar Tabla de posiciones" attrs="{'invisible':[('standing_ids','!=',[])]}"/>
+                    <button name="load_standings" type="object" string="Cargar Tabla de posiciones" attrs="{'invisible':[('standing_ids','!=',[])]}"/>
                     <button name="update_standings" type="object" string="Actualizar" attrs="{'invisible':[('standing_ids','=',[])]}"/>
                     <group string="Proxima ronda" colspan="4" attrs="{'invisible':[('advance','=',0)]}">
                         <field name="classified_ids" nolabel="1" colspan="4">

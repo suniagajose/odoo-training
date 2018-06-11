@@ -1,0 +1,474 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+    <record id='russia2018_match_1' model='sport.match'>
+        <field name='sequence'>1</field>
+        <field name='date'>2018-06-14 16:00</field>
+        <field name='venue'>Luzhniki Stadium, Moscow</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_a"/>
+        <field name='home_team_id' ref="football_team_rus"/>
+        <field name='visitor_team_id' ref="football_team_sar"/>
+    </record>
+    <record id='russia2018_match_2' model='sport.match'>
+        <field name='sequence'>2</field>
+        <field name='date'>2018-06-15 13:00</field>
+        <field name='venue'>Ekaterinburg Arena, Ekaterinburg</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_a"/>
+        <field name='home_team_id' ref="football_team_egp"/>
+        <field name='visitor_team_id' ref="football_team_uru"/>
+    </record>
+    <record id='russia2018_match_3' model='sport.match'>
+        <field name='sequence'>3</field>
+        <field name='date'>2018-06-15 19:00</field>
+        <field name='venue'>Fisht Stadium, Sochi</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_b"/>
+        <field name='home_team_id' ref="football_team_por"/>
+        <field name='visitor_team_id' ref="football_team_esp"/>
+    </record>
+    <record id='russia2018_match_4' model='sport.match'>
+        <field name='sequence'>4</field>
+        <field name='date'>2018-06-15 16:00</field>
+        <field name='venue'>Saint Petersburg Stadium, Saint Petersburg</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_b"/>
+        <field name='home_team_id' ref="football_team_mad"/>
+        <field name='visitor_team_id' ref="football_team_irn"/>
+    </record>
+    <record id='russia2018_match_5' model='sport.match'>
+        <field name='sequence'>5</field>
+        <field name='date'>2018-06-16 11:00</field>
+        <field name='venue'>Kazan Arena, Kazan</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_c"/>
+        <field name='home_team_id' ref="football_team_fra"/>
+        <field name='visitor_team_id' ref="football_team_aus"/>
+    </record>
+    <record id='russia2018_match_6' model='sport.match'>
+        <field name='sequence'>6</field>
+        <field name='date'>2018-06-16 17:00</field>
+        <field name='venue'>Mordovia Arena, Saransk</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_c"/>
+        <field name='home_team_id' ref="football_team_per"/>
+        <field name='visitor_team_id' ref="football_team_den"/>
+    </record>
+
+    <record id='russia2018_match_7' model='sport.match'>
+        <field name='sequence'>7</field>
+        <field name='date'>2018-06-16 14:00</field>
+        <field name='venue'>Spartak Stadium, Moscow</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_d"/>
+        <field name='home_team_id' ref="football_team_arg"/>
+        <field name='visitor_team_id' ref="football_team_isk"/>
+    </record>
+    <record id='russia2018_match_8' model='sport.match'>
+        <field name='sequence'>8</field>
+        <field name='date'>2018-06-16 20:00</field>
+        <field name='venue'>Kaliningrad Stadium, Kaliningrad</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_d"/>
+        <field name='home_team_id' ref="football_team_cro"/>
+        <field name='visitor_team_id' ref="football_team_nga"/>
+    </record>
+    <record id='russia2018_match_9' model='sport.match'>
+        <field name='sequence'>9</field>
+        <field name='date'>2018-06-17 19:00</field>
+        <field name='venue'>Rostov Arena, Rostov-on-Don</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_e"/>
+        <field name='home_team_id' ref="football_team_bra"/>
+        <field name='visitor_team_id' ref="football_team_swi"/>
+    </record>
+    <record id='russia2018_match_10' model='sport.match'>
+        <field name='sequence'>10</field>
+        <field name='date'>2018-06-17 13:00</field>
+        <field name='venue'>Samara Arena, Samara</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_e"/>
+        <field name='home_team_id' ref="football_team_crc"/>
+        <field name='visitor_team_id' ref="football_team_rsd"/>
+    </record>
+    <record id='russia2018_match_11' model='sport.match'>
+        <field name='sequence'>11</field>
+        <field name='date'>2018-06-17 16:00</field>
+        <field name='venue'>Luzhniki Stadium, Moscow</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_f"/>
+        <field name='home_team_id' ref="football_team_ger"/>
+        <field name='visitor_team_id' ref="football_team_mex"/>
+    </record>
+    <record id='russia2018_match_12' model='sport.match'>
+        <field name='sequence'>12</field>
+        <field name='date'>2018-06-18 13:00</field>
+        <field name='venue'>Nizhny Novgorod Stadium, Nizhny Novgorod</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_f"/>
+        <field name='home_team_id' ref="football_team_swe"/>
+        <field name='visitor_team_id' ref="football_team_kor"/>
+    </record>
+    <record id='russia2018_match_13' model='sport.match'>
+        <field name='sequence'>13</field>
+        <field name='date'>2018-06-18 16:00</field>
+        <field name='venue'>Fisht Stadium, Sochi</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_g"/>
+        <field name='home_team_id' ref="football_team_bel"/>
+        <field name='visitor_team_id' ref="football_team_pan"/>
+    </record>
+    <record id='russia2018_match_14' model='sport.match'>
+        <field name='sequence'>14</field>
+        <field name='date'>2018-06-18 19:00</field>
+        <field name='venue'>Volgograd Arena, Volgograd</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_g"/>
+        <field name='home_team_id' ref="football_team_tun"/>
+        <field name='visitor_team_id' ref="football_team_eng"/>
+    </record>
+    <record id='russia2018_match_15' model='sport.match'>
+        <field name='sequence'>15</field>
+        <field name='date'>2018-06-19 13:00</field>
+        <field name='venue'>Spartak Stadium, Moscow</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_h"/>
+        <field name='home_team_id' ref="football_team_pln"/>
+        <field name='visitor_team_id' ref="football_team_sen"/>
+    </record>
+    <record id='russia2018_match_16' model='sport.match'>
+        <field name='sequence'>16</field>
+        <field name='date'>2018-06-19 17:00</field>
+        <field name='venue'>Mordovia Arena, Saransk</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_h"/>
+        <field name='home_team_id' ref="football_team_col"/>
+        <field name='visitor_team_id' ref="football_team_jpn"/>
+    </record>
+    <record id='russia2018_match_17' model='sport.match'>
+        <field name='sequence'>17</field>
+        <field name='date'>2018-06-19 19:00</field>
+        <field name='venue'>Saint Petersburg Stadium, Saint Petersburg</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_a"/>
+        <field name='home_team_id' ref="football_team_rus"/>
+        <field name='visitor_team_id' ref="football_team_egp"/>
+    </record>
+    <record id='russia2018_match_18' model='sport.match'>
+        <field name='sequence'>18</field>
+        <field name='date'>2018-06-20 16:00</field>
+        <field name='venue'>Rostov Arena, Rostov-on-Don</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_a"/>
+        <field name='home_team_id' ref="football_team_uru"/>
+        <field name='visitor_team_id' ref="football_team_sar"/>
+    </record>
+    <record id='russia2018_match_19' model='sport.match'>
+        <field name='sequence'>19</field>
+        <field name='date'>2018-06-20 13:00</field>
+        <field name='venue'>Luzhniki Stadium, Moscow</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_b"/>
+        <field name='home_team_id' ref="football_team_por"/>
+        <field name='visitor_team_id' ref="football_team_mad"/>
+    </record>
+    <record id='russia2018_match_20' model='sport.match'>
+        <field name='sequence'>20</field>
+        <field name='date'>2018-06-20 19:00</field>
+        <field name='venue'>Kazan Arena, Kazan</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_b"/>
+        <field name='home_team_id' ref="football_team_irn"/>
+        <field name='visitor_team_id' ref="football_team_esp"/>
+    </record>
+    <record id='russia2018_match_21' model='sport.match'>
+        <field name='sequence'>21</field>
+        <field name='date'>2018-06-21 12:00</field>
+        <field name='venue'>Ekaterinburg Arena, Ekaterinburg</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_c"/>
+        <field name='home_team_id' ref="football_team_fra"/>
+        <field name='visitor_team_id' ref="football_team_per"/>
+    </record>
+    <record id='russia2018_match_22' model='sport.match'>
+        <field name='sequence'>22</field>
+        <field name='date'>2018-06-21 16:00</field>
+        <field name='venue'>Samara Arena, Samara</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_c"/>
+        <field name='home_team_id' ref="football_team_den"/>
+        <field name='visitor_team_id' ref="football_team_aus"/>
+    </record>
+    <record id='russia2018_match_23' model='sport.match'>
+        <field name='sequence'>23</field>
+        <field name='date'>2018-06-21 19:00</field>
+        <field name='venue'>Nizhny Novgorod Stadium, Nizhny Novgorod</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_d"/>
+        <field name='home_team_id' ref="football_team_arg"/>
+        <field name='visitor_team_id' ref="football_team_cro"/>
+    </record>
+    <record id='russia2018_match_24' model='sport.match'>
+        <field name='sequence'>24</field>
+        <field name='date'>2018-06-22 16:00</field>
+        <field name='venue'>Volgograd Arena, Volgograd</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_d"/>
+        <field name='home_team_id' ref="football_team_nga"/>
+        <field name='visitor_team_id' ref="football_team_isk"/>
+    </record>
+    <record id='russia2018_match_25' model='sport.match'>
+        <field name='sequence'>25</field>
+        <field name='date'>2018-06-22 13:00</field>
+        <field name='venue'>Saint Petersburg Stadium, Saint Petersburg</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_e"/>
+        <field name='home_team_id' ref="football_team_bra"/>
+        <field name='visitor_team_id' ref="football_team_crc"/>
+    </record>
+    <record id='russia2018_match_26' model='sport.match'>
+        <field name='sequence'>26</field>
+        <field name='date'>2018-06-22 19:00</field>
+        <field name='venue'>Kaliningrad Stadium, Kaliningrad</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_e"/>
+        <field name='home_team_id' ref="football_team_rsd"/>
+        <field name='visitor_team_id' ref="football_team_swi"/>
+    </record>
+    <record id='russia2018_match_27' model='sport.match'>
+        <field name='sequence'>27</field>
+        <field name='date'>2018-06-23 16:00</field>
+        <field name='venue'>Fisht Stadium, Sochi</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_f"/>
+        <field name='home_team_id' ref="football_team_ger"/>
+        <field name='visitor_team_id' ref="football_team_swe"/>
+    </record>
+    <record id='russia2018_match_28' model='sport.match'>
+        <field name='sequence'>28</field>
+        <field name='date'>2018-06-23 19:00</field>
+        <field name='venue'>Rostov Arena, Rostov-on-Don</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_f"/>
+        <field name='home_team_id' ref="football_team_kor"/>
+        <field name='visitor_team_id' ref="football_team_mex"/>
+    </record>
+    <record id='russia2018_match_29' model='sport.match'>
+        <field name='sequence'>29</field>
+        <field name='date'>2018-06-23 13:00</field>
+        <field name='venue'>Spartak Stadium, Moscow</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_g"/>
+        <field name='home_team_id' ref="football_team_bel"/>
+        <field name='visitor_team_id' ref="football_team_tun"/>
+    </record>
+    <record id='russia2018_match_30' model='sport.match'>
+        <field name='sequence'>30</field>
+        <field name='date'>2018-06-24 13:00</field>
+        <field name='venue'>Nizhny Novgorod Stadium, Nizhny Novgorod</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_g"/>
+        <field name='home_team_id' ref="football_team_eng"/>
+        <field name='visitor_team_id' ref="football_team_pan"/>
+    </record>
+    <record id='russia2018_match_31' model='sport.match'>
+        <field name='sequence'>31</field>
+        <field name='date'>2018-06-24 19:00</field>
+        <field name='venue'>Kazan Arena, Kazan</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_h"/>
+        <field name='home_team_id' ref="football_team_pln"/>
+        <field name='visitor_team_id' ref="football_team_col"/>
+    </record>
+    <record id='russia2018_match_32' model='sport.match'>
+        <field name='sequence'>32</field>
+        <field name='date'>2018-06-24 16:00</field>
+        <field name='venue'>Ekaterinburg Arena, Ekaterinburg</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_h"/>
+        <field name='home_team_id' ref="football_team_jpn"/>
+        <field name='visitor_team_id' ref="football_team_sen"/>
+    </record>
+    <record id='russia2018_match_33' model='sport.match'>
+        <field name='sequence'>33</field>
+        <field name='date'>2018-06-25 15:00</field>
+        <field name='venue'>Samara Arena, Samara</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_a"/>
+        <field name='home_team_id' ref="football_team_uru"/>
+        <field name='visitor_team_id' ref="football_team_rus"/>
+    </record>
+    <record id='russia2018_match_34' model='sport.match'>
+        <field name='sequence'>34</field>
+        <field name='date'>2018-06-25 15:00</field>
+        <field name='venue'>Volgograd Arena, Volgograd</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_a"/>
+        <field name='home_team_id' ref="football_team_sar"/>
+        <field name='visitor_team_id' ref="football_team_egp"/>
+    </record>
+    <record id='russia2018_match_35' model='sport.match'>
+        <field name='sequence'>35</field>
+        <field name='date'>2018-06-25 19:00</field>
+        <field name='venue'>Mordovia Arena, Saransk</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_b"/>
+        <field name='home_team_id' ref="football_team_irn"/>
+        <field name='visitor_team_id' ref="football_team_por"/>
+    </record>
+    <record id='russia2018_match_36' model='sport.match'>
+        <field name='sequence'>36</field>
+        <field name='date'>2018-06-25 19:00</field>
+        <field name='venue'>Kaliningrad Stadium, Kaliningrad</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_b"/>
+        <field name='home_team_id' ref="football_team_esp"/>
+        <field name='visitor_team_id' ref="football_team_mad"/>
+    </record>
+    <record id='russia2018_match_37' model='sport.match'>
+        <field name='sequence'>37</field>
+        <field name='date'>2018-06-26 15:00</field>
+        <field name='venue'>Luzhniki Stadium, Moscow</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_c"/>
+        <field name='home_team_id' ref="football_team_den"/>
+        <field name='visitor_team_id' ref="football_team_fra"/>
+    </record>
+    <record id='russia2018_match_38' model='sport.match'>
+        <field name='sequence'>38</field>
+        <field name='date'>2018-06-26 15:00</field>
+        <field name='venue'>Luzhniki Stadium, Moscow</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_c"/>
+        <field name='home_team_id' ref="football_team_aus"/>
+        <field name='visitor_team_id' ref="football_team_per"/>
+    </record>
+    <record id='russia2018_match_39' model='sport.match'>
+        <field name='sequence'>39</field>
+        <field name='date'>2018-06-26 19:00</field>
+        <field name='venue'>Saint Petersburg Stadium, Saint Petersburg</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_d"/>
+        <field name='home_team_id' ref="football_team_nga"/>
+        <field name='visitor_team_id' ref="football_team_arg"/>
+    </record>
+    <record id='russia2018_match_40' model='sport.match'>
+        <field name='sequence'>40</field>
+        <field name='date'>2018-06-26 19:00</field>
+        <field name='venue'>Rostov Arena, Rostov-on-Don</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_d"/>
+        <field name='home_team_id' ref="football_team_isk"/>
+        <field name='visitor_team_id' ref="football_team_cro"/>
+    </record>
+    <record id='russia2018_match_41' model='sport.match'>
+        <field name='sequence'>41</field>
+        <field name='date'>2018-06-27 19:00</field>
+        <field name='venue'>Spartak Stadium, Moscow</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_e"/>
+        <field name='home_team_id' ref="football_team_rsd"/>
+        <field name='visitor_team_id' ref="football_team_rsd"/>
+    </record>
+    <record id='russia2018_match_42' model='sport.match'>
+        <field name='sequence'>42</field>
+        <field name='date'>2018-06-27 19:00</field>
+        <field name='venue'>Nizhny Novgorod Stadium, Nizhny Novgorod</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_e"/>
+        <field name='home_team_id' ref="football_team_swi"/>
+        <field name='visitor_team_id' ref="football_team_crc"/>
+    </record>
+    <record id='russia2018_match_43' model='sport.match'>
+        <field name='sequence'>43</field>
+        <field name='date'>2018-06-27 15:00</field>
+        <field name='venue'>Kazan Arena, Kazan</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_f"/>
+        <field name='home_team_id' ref="football_team_kor"/>
+        <field name='visitor_team_id' ref="football_team_ger"/>
+    </record>
+    <record id='russia2018_match_44' model='sport.match'>
+        <field name='sequence'>44</field>
+        <field name='date'>2018-06-27 15:00</field>
+        <field name='venue'>Ekaterinburg Arena, Ekaterinburg</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_f"/>
+        <field name='home_team_id' ref="football_team_mex"/>
+        <field name='visitor_team_id' ref="football_team_swe"/>
+    </record>
+    <record id='russia2018_match_45' model='sport.match'>
+        <field name='sequence'>45</field>
+        <field name='date'>2018-06-28 19:00</field>
+        <field name='venue'>Kaliningrad Stadium, Kaliningrad</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_g"/>
+        <field name='home_team_id' ref="football_team_eng"/>
+        <field name='visitor_team_id' ref="football_team_bel"/>
+    </record>
+    <record id='russia2018_match_46' model='sport.match'>
+        <field name='sequence'>46</field>
+        <field name='date'>2018-06-28 19:00</field>
+        <field name='venue'>Mordovia Arena, Saransk</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_g"/>
+        <field name='home_team_id' ref="football_team_pan"/>
+        <field name='visitor_team_id' ref="football_team_tun"/>
+    </record>
+    <record id='russia2018_match_47' model='sport.match'>
+        <field name='sequence'>47</field>
+        <field name='date'>2018-06-28 15:00</field>
+        <field name='venue'>Samara Arena, Samara</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_h"/>
+        <field name='home_team_id' ref="football_team_sen"/>
+        <field name='visitor_team_id' ref="football_team_col"/>
+    </record>
+</odoo>
