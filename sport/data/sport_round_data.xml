@@ -233,4 +233,197 @@
         <field name='stage'>final</field>
         <field name='tournament_id' ref='sport_tournament_russia2018'/>
     </record>
+    <record id="russia2018_grupo_a_classified_h" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_grupo_a'/>
+        <field name='next_round_id' ref='russia2018_octavos_r1'/>
+        <field name='position'>1</field>
+        <field name='side'>home</field>
+    </record>
+    <record id="russia2018_grupo_a_classified_v" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_grupo_a'/>
+        <field name='next_round_id' ref='russia2018_octavos_r3'/>
+        <field name='position'>2</field>
+        <field name='side'>visitor</field>
+    </record>
+    <record id="russia2018_grupo_b_classified_h" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_grupo_b'/>
+        <field name='next_round_id' ref='russia2018_octavos_r3'/>
+        <field name='position'>1</field>
+        <field name='side'>home</field>
+    </record>
+    <record id="russia2018_grupo_b_classified_v" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_grupo_b'/>
+        <field name='next_round_id' ref='russia2018_octavos_r1'/>
+        <field name='position'>2</field>
+        <field name='side'>visitor</field>
+    </record>
+    <record id="russia2018_grupo_c_classified_h" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_grupo_c'/>
+        <field name='next_round_id' ref='russia2018_octavos_r2'/>
+        <field name='position'>1</field>
+        <field name='side'>home</field>
+    </record>
+    <record id="russia2018_grupo_c_classified_v" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_grupo_c'/>
+        <field name='next_round_id' ref='russia2018_octavos_r4'/>
+        <field name='position'>2</field>
+        <field name='side'>visitor</field>
+    </record>
+    <record id="russia2018_grupo_d_classified_h" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_grupo_d'/>
+        <field name='next_round_id' ref='russia2018_octavos_r4'/>
+        <field name='position'>1</field>
+        <field name='side'>home</field>
+    </record>
+    <record id="russia2018_grupo_d_classified_v" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_grupo_d'/>
+        <field name='next_round_id' ref='russia2018_octavos_r2'/>
+        <field name='position'>2</field>
+        <field name='side'>visitor</field>
+    </record>
+    <record id="russia2018_grupo_e_classified_h" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_grupo_e'/>
+        <field name='next_round_id' ref='russia2018_octavos_r5'/>
+        <field name='position'>1</field>
+        <field name='side'>home</field>
+    </record>
+    <record id="russia2018_grupo_e_classified_v" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_grupo_e'/>
+        <field name='next_round_id' ref='russia2018_octavos_r7'/>
+        <field name='position'>2</field>
+        <field name='side'>visitor</field>
+    </record>
+    <record id="russia2018_grupo_f_classified_h" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_grupo_f'/>
+        <field name='next_round_id' ref='russia2018_octavos_r7'/>
+        <field name='position'>1</field>
+        <field name='side'>home</field>
+    </record>
+    <record id="russia2018_grupo_f_classified_v" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_grupo_f'/>
+        <field name='next_round_id' ref='russia2018_octavos_r5'/>
+        <field name='position'>2</field>
+        <field name='side'>visitor</field>
+    </record>
+    <record id="russia2018_grupo_g_classified_h" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_grupo_g'/>
+        <field name='next_round_id' ref='russia2018_octavos_r6'/>
+        <field name='position'>1</field>
+        <field name='side'>home</field>
+    </record>
+    <record id="russia2018_grupo_g_classified_v" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_grupo_g'/>
+        <field name='next_round_id' ref='russia2018_octavos_r8'/>
+        <field name='position'>2</field>
+        <field name='side'>visitor</field>
+    </record>
+    <record id="russia2018_grupo_h_classified_h" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_grupo_h'/>
+        <field name='next_round_id' ref='russia2018_octavos_r8'/>
+        <field name='position'>1</field>
+        <field name='side'>home</field>
+    </record>
+    <record id="russia2018_grupo_h_classified_v" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_grupo_h'/>
+        <field name='next_round_id' ref='russia2018_octavos_r6'/>
+        <field name='position'>2</field>
+        <field name='side'>visitor</field>
+    </record>
+    <record id="russia2018_octavos_r1_classified" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_octavos_r1'/>
+        <field name='next_round_id' ref='russia2018_cuartos_r1'/>
+        <field name='position'>1</field>
+        <field name='side'>home</field>
+    </record>
+    <record id="russia2018_octavos_r2_classified" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_octavos_r2'/>
+        <field name='next_round_id' ref='russia2018_cuartos_r1'/>
+        <field name='position'>1</field>
+        <field name='side'>visitor</field>
+    </record>
+    <record id="russia2018_octavos_r3_classified" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_octavos_r3'/>
+        <field name='next_round_id' ref='russia2018_cuartos_r3'/>
+        <field name='position'>1</field>
+        <field name='side'>home</field>
+    </record>
+    <record id="russia2018_octavos_r4_classified" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_octavos_r4'/>
+        <field name='next_round_id' ref='russia2018_cuartos_r3'/>
+        <field name='position'>1</field>
+        <field name='side'>visitor</field>
+    </record>
+    <record id="russia2018_octavos_r5_classified" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_octavos_r5'/>
+        <field name='next_round_id' ref='russia2018_cuartos_r2'/>
+        <field name='position'>1</field>
+        <field name='side'>home</field>
+    </record>
+    <record id="russia2018_octavos_r6_classified" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_octavos_r6'/>
+        <field name='next_round_id' ref='russia2018_cuartos_r2'/>
+        <field name='position'>1</field>
+        <field name='side'>visitor</field>
+    </record>
+    <record id="russia2018_octavos_r7_classified" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_octavos_r7'/>
+        <field name='next_round_id' ref='russia2018_cuartos_r4'/>
+        <field name='position'>1</field>
+        <field name='side'>home</field>
+    </record>
+    <record id="russia2018_octavos_r8_classified" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_octavos_r8'/>
+        <field name='next_round_id' ref='russia2018_cuartos_r4'/>
+        <field name='position'>1</field>
+        <field name='side'>visitor</field>
+    </record>
+    <record id="russia2018_cuartos_r1_classified" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_cuartos_r1'/>
+        <field name='next_round_id' ref='russia2018_semifinal_r1'/>
+        <field name='position'>1</field>
+        <field name='side'>home</field>
+    </record>
+    <record id="russia2018_cuartos_r2_classified" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_cuartos_r2'/>
+        <field name='next_round_id' ref='russia2018_semifinal_r1'/>
+        <field name='position'>1</field>
+        <field name='side'>visitor</field>
+    </record>
+    <record id="russia2018_cuartos_r3_classified" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_cuartos_r3'/>
+        <field name='next_round_id' ref='russia2018_semifinal_r2'/>
+        <field name='position'>1</field>
+        <field name='side'>home</field>
+    </record>
+    <record id="russia2018_cuartos_r4_classified" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_cuartos_r4'/>
+        <field name='next_round_id' ref='russia2018_semifinal_r2'/>
+        <field name='position'>1</field>
+        <field name='side'>visitor</field>
+    </record>
+    <record id="russia2018_semifinal_r1_classified_third" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_semifinal_r1'/>
+        <field name='next_round_id' ref='russia2018_tercero'/>
+        <field name='position'>2</field>
+        <field name='side'>home</field>
+    </record>
+    <record id="russia2018_semifinal_r2_classified_third" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_semifinal_r2'/>
+        <field name='next_round_id' ref='russia2018_tercero'/>
+        <field name='position'>2</field>
+        <field name='side'>visitor</field>
+    </record>
+    <record id="russia2018_semifinal_r1_classified_final" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_semifinal_r1'/>
+        <field name='next_round_id' ref='russia2018_final'/>
+        <field name='position'>1</field>
+        <field name='side'>home</field>
+    </record>
+    <record id="russia2018_semifinal_r2_classified_final" model="sport.round.classified">
+        <field name='round_id' ref='russia2018_semifinal_r2'/>
+        <field name='next_round_id' ref='russia2018_final'/>
+        <field name='position'>1</field>
+        <field name='side'>visitor</field>
+    </record>
+
  </odoo>
