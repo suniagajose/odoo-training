@@ -464,11 +464,149 @@
     <record id='russia2018_match_47' model='sport.match'>
         <field name='sequence'>47</field>
         <field name='date'>2018-06-28 15:00</field>
+        <field name='venue'>Volgograd Arena, Volgograd</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="russia2018_grupo_h"/>
+        <field name='home_team_id' ref="football_team_jpn"/>
+        <field name='visitor_team_id' ref="football_team_pln"/>
+    </record>
+    <record id='russia2018_match_48' model='sport.match'>
+        <field name='sequence'>48</field>
+        <field name='date'>2018-06-28 15:00</field>
         <field name='venue'>Samara Arena, Samara</field>
         <field name='state'>scheduled</field>
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
         <field name='round_id' ref="russia2018_grupo_h"/>
         <field name='home_team_id' ref="football_team_sen"/>
         <field name='visitor_team_id' ref="football_team_col"/>
+    </record>
+    <record id='russia2018_match_49' model='sport.match'>
+        <field name='sequence'>49</field>
+        <field name='date'>2018-06-30 19:00</field>
+        <field name='venue'>Fisht Stadium, Sochi</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="octavos_r1"/>
+    </record>
+    <record id='russia2018_match_50' model='sport.match'>
+        <field name='sequence'>50</field>
+        <field name='date'>2018-06-30 15:00</field>
+        <field name='venue'>Kazan Arena, Kazan</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="octavos_r2"/>
+    </record>
+    <record id='russia2018_match_51' model='sport.match'>
+        <field name='sequence'>51</field>
+        <field name='date'>2018-07-01 15:00</field>
+        <field name='venue'>Luzhniki Stadium, Moscow</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="octavos_r3"/>
+    </record>
+    <record id='russia2018_match_52' model='sport.match'>
+        <field name='sequence'>52</field>
+        <field name='date'>2018-07-01 19:00</field>
+        <field name='venue'>Nizhny Novgorod Stadium, Nizhny Novgorod</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="octavos_r4"/>
+    </record>
+    <record id='russia2018_match_53' model='sport.match'>
+        <field name='sequence'>53</field>
+        <field name='date'>2018-07-02 15:00</field>
+        <field name='venue'>Samara Arena, Samara</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="octavos_r5"/>
+    </record>
+    <record id='russia2018_match_54' model='sport.match'>
+        <field name='sequence'>54</field>
+        <field name='date'>2018-07-02 19:00</field>
+        <field name='venue'>Rostov Arena, Rostov-on-Don</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="octavos_r6"/>
+    </record>
+    <record id='russia2018_match_55' model='sport.match'>
+        <field name='sequence'>55</field>
+        <field name='date'>2018-07-03 15:00</field>
+        <field name='venue'>Saint Petersburg Stadium, Saint Petersburg</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="octavos_r7"/>
+    </record>
+    <record id='russia2018_match_56' model='sport.match'>
+        <field name='sequence'>56</field>
+        <field name='date'>2018-07-03 19:00</field>
+        <field name='venue'>Spartak Stadium, Moscow</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="octavos_r8"/>
+    </record>
+    <record id='russia2018_match_57' model='sport.match'>
+        <field name='sequence'>57</field>
+        <field name='date'>2018-07-06 15:00</field>
+        <field name='venue'>Nizhny Novgorod Stadium, Nizhny Novgorod</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="cuartos_r1"/>
+    </record>
+    <record id='russia2018_match_58' model='sport.match'>
+        <field name='sequence'>58</field>
+        <field name='date'>2018-07-06 19:00</field>
+        <field name='venue'>Kazan Arena, Kazan</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="cuartos_r2"/>
+    </record>
+    <record id='russia2018_match_59' model='sport.match'>
+        <field name='sequence'>59</field>
+        <field name='date'>2018-07-07 19:00</field>
+        <field name='venue'>Fisht Stadium, Sochi</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="cuartos_r3"/>
+    </record>
+    <record id='russia2018_match_60' model='sport.match'>
+        <field name='sequence'>60</field>
+        <field name='date'>2018-07-07 15:00</field>
+        <field name='venue'>Samara Arena, Samara</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="cuartos_r4"/>
+    </record>
+    <record id='russia2018_match_61' model='sport.match'>
+        <field name='sequence'>61</field>
+        <field name='date'>2018-07-10 19:00</field>
+        <field name='venue'>Saint Petersburg Stadium, Saint Petersburg</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="semifinal_r1"/>
+    </record>
+    <record id='russia2018_match_62' model='sport.match'>
+        <field name='sequence'>62</field>
+        <field name='date'>2018-07-11 19:00</field>
+        <field name='venue'>Luzhniki Stadium, Moscow</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="semifinal_r2"/>
+    </record>
+    <record id='russia2018_match_63' model='sport.match'>
+        <field name='sequence'>63</field>
+        <field name='date'>2018-07-14 15:00</field>
+        <field name='venue'>Saint Petersburg Stadium, Saint Petersburg</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="tercero"/>
+    </record>
+    <record id='russia2018_match_64' model='sport.match'>
+        <field name='sequence'>64</field>
+        <field name='date'>2018-07-15 16:00</field>
+        <field name='venue'>Luzhniki Stadium, Moscow</field>
+        <field name='state'>scheduled</field>
+        <field name='tournament_id' ref="sport_tournament_russia2018"/>
+        <field name='round_id' ref="final"/>
     </record>
 </odoo>
