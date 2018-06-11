@@ -144,7 +144,7 @@ class SportRound(models.Model):
 
     name = fields.Char('Name', size=64, required=True)
     tournament_id = fields.Many2one('sport.tournament', 'Tournament')
-    team_ids = fields.many2many('sport.team', 'sport_round_team_rel', 'round_id', 'team_id', 'Teams by Round')
+    team_ids = fields.Many2many('sport.team', 'sport_round_team_rel', 'round_id', 'team_id', 'Teams by Round')
     members = fields.Integer('Maximun teams', required=True)
     matchup = fields.Integer('Matchup games', required=True, help="Number of games each team faces")
     match_ids = fields.One2many('sport.match', 'round_id', 'Matches')
@@ -160,7 +160,7 @@ class SportRound(models.Model):
         ('semi', 'Semifinal'),
         ('third', 'Tercero'),
         ('final', 'Final'),
-    ], 'Stage'),
+    ], 'Stage')
     done = fields.Boolean('Finished round', compute='_compute_done')
 
 
@@ -169,25 +169,25 @@ class SportRoundClassified(models.Model):
     _description = "Runner Up"
 
     @api.multi
+    @api.depends('position', 'round_id.standing_ids.sequence')
     def _compute_team_id(self):
-        for record in self:
-            pos = record.position
-            team_id = [std.team_id.id for std in record.round_id.standing_ids if std.sequence == pos]
-            record.team_id = team_id and team_id[0] or False
-        return result
+        for classified in self:
+            standing = classified.round_id.standing_ids.filtered(
+                lambda std: std.sequence == classified.position)
+            classified.team_id = standing.team_id if standing else False
 
-    # def create(self, cr, uid, vals, context=None):
-    #     if 'round_id' in vals and 'position' in vals:
-    #         round_name = self.pool.get('sport.round').browse(cr, uid, vals['round_id']).name
-    #         vals.update({'name': str(vals['position']) + u'° '+ round_name })
-    #     res = super(sport_round_classified, self).create(cr, uid, vals, context=context)
-    #     return res
+    @api.multi
+    @api.depends('position', 'round_id.name')
+    def _compute_name(self):
+        for classified in self:
+            round_name = classified.round_id.name
+            classified.name = str(classified.position) + u'° ' + round_name
 
-    name = fields.Char('Name', size=64)
+    name = fields.Char('Name', compute='_compute_name', store=True)
     round_id = fields.Many2one('sport.round', 'Round')
     next_round_id = fields.Many2one('sport.round', 'Next Round')
-    team_id = fields.Many2one('sport.team', compute='_compute_team_id', string='RunnerUp Team')
-    side = fields.selection([
+    team_id = fields.Many2one('sport.team', compute='_compute_team_id', string='RunnerUp Team', store=True)
+    side = fields.Selection([
         ('home', 'Home'),
         ('visitor', 'Visitor'),
     ], 'Side')
@@ -317,7 +317,7 @@ class SportMatch(models.Model):
             visitor_team_name = match.visitor_team_id.name
             name = '%s vs. %s' % (home_team_name, visitor_team_name)
             if (match.state == 'done' and
-                    match.home_score - match.visitor_score == 0) and
+                    (match.home_score - match.visitor_score == 0) and
                     match.knockout):
                 name = '%s %d(%d) - %d(%d) %s' % (
                     home_team_name,
@@ -382,12 +382,12 @@ class SportMatch(models.Model):
     home_ot_score = fields.Integer('Home overtime score')
     visitor_ot_score = fields.Integer('Visitor overtime score')
     date = fields.Datetime('Begin Date')
-    state = fields.selection([
-        ('scheduled', 'Has not started')
-        ('started', 'Already started')
-        ('postponed', 'Will be rescheduled')
-        ('delayed', 'Will begin delayed')
-        ('done', 'Finished')
+    state = fields.Selection([
+        ('scheduled', 'Has not started'),
+        ('started', 'Already started'),
+        ('postponed', 'Will be rescheduled'),
+        ('delayed', 'Will begin delayed'),
+        ('done', 'Finished'),
     ], 'Status', default='scheduled')
     country_id = fields.Many2one('res.country', 'Country')
     state_id = fields.Many2one('res.country.state', 'State')
@@ -401,12 +401,12 @@ class SportMatch(models.Model):
     def switch_teams(self):
         self.ensure_one()
         res = self.write({
-            home_team_id': self.visitor_team_id.id,
-            visitor_team_id': self.home_team_id.id,
-            home_score': self.visitor_score,
-            visitor_score': self.home_score,
-            home_ot_score': self.visitor_ot_score,
-            visitor_ot_score': self.home_ot_score,
+            'home_team_id': self.visitor_team_id.id,
+            'visitor_team_id': self.home_team_id.id,
+            'home_score': self.visitor_score,
+            'visitor_score': self.home_score,
+            'home_ot_score': self.visitor_ot_score,
+            'visitor_ot_score': self.home_ot_score,
         })
         return res
 

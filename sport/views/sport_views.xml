@@ -15,7 +15,7 @@
                         <field name="state_id" string="Estado"/>
                     </group>
                     <group>
-                        <field name="type_id" string="Deporte"/>
+                        <field name="sport_id" string="Deporte"/>
                         <field name="date_start" string="Inicio del Torneo"/>
                         <field name="date_stop" string="Fin del Torneo"/>
                     </group>
@@ -34,7 +34,7 @@
         <field name="arch" type="xml">
             <tree string="Torneos">
                 <field name="name" string="Nombre del Torneo"/>
-                <field name="type_id" string="Deporte"/>
+                <field name="sport_id" string="Deporte"/>
                 <field name="date_start" string="Inicio del Torneo"/>
                 <field name="date_stop" string="Fin del Torneo"/>
                 <field name="country_id" string="Pais"/>
@@ -74,7 +74,7 @@
                         <field name="advance" string="Avanzan a proxima ronda"/>
                     </group>
                     <group string="Equipos y Partidos" colspan="4">
-                        <field name="teams_ids" nolabel="1" widget="many2many_tags" on_change="onchange_teams(teams_ids,members)" colspan="4"/>
+                        <field name="team_ids" nolabel="1" widget="many2many_tags" colspan="4"/>
                         <field name="match_ids" nolabel="1" attrs="{'invisible':[('matches','=',0)]}" colspan="4">
                             <tree>
                                 <field name="sequence" style="width: 10%%"/>
@@ -126,7 +126,7 @@
         <field name="arch" type="xml">
             <tree string="Grupos">
                 <field name="name" string="Nombre del grupo"/>
-                <field name="teams_ids" string="Equipos"/>
+                <field name="team_ids" string="Equipos"/>
             </tree>
         </field>
     </record>
@@ -149,7 +149,7 @@
             <tree string="Equipos">
                 <field name="name" string="Nombre"/>
                 <field name="code" string="Codigo"/>
-                <field name="type_id" string="Deporte"/>
+                <field name="sport_id" string="Deporte"/>
                 <field name="country_id" string="Pais"/>
             </tree>
         </field>
@@ -163,7 +163,7 @@
             <form string="Equipos">
                 <field name="name" string="Nombre"/>
                 <field name="code" string="Codigo"/>
-                <field name="type_id" string="Deporte"/>
+                <field name="sport_id" string="Deporte"/>
                 <field name="country_id" string="Pais"/>
             </form>
         </field>
