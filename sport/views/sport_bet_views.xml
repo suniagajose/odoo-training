@@ -7,38 +7,44 @@
         <field name="type">form</field>
         <field name="arch" type="xml">
             <form string="Apuestas">
-                <group>
+                <header>
+                    <button string="Import Document" class="btn-primary" type="object" name="action_import"/>
+                    <button string="Clean Bet" type="object" name="action_reset" groups="base.group_no_one"/>
+                </header>
+                <sheet>
                     <group>
-                        <field name="name" string="Referencia"/>
-                        <field name="partner_id" string="Nombre"/>
-                        <field name="bet_group_id" string="Grupo"/>
+                        <group>
+                            <field name="name" string="Referencia"/>
+                            <field name="bet_group_id" string="Grupo"/>
+                            <field name="ir_attachment_id" string="Related Document"/>
+                        </group>
+                        <group>
+                            <field name="date" string="Fecha"/>
+                            <field name="partner_id" string="Nombre"/>
+                        </group>
+                        <group string="Líneas de Apuesta" colspan="4" attrs="{'invisible': [('bet_lines', '=', [])]}">
+                            <field name="bet_lines" nolabel="1" readonly="1">
+                                <tree editable="bottom">
+                                    <field name="tournament_id" string="Torneo"/>
+                                    <field name="match_id" string="Partido" domain="[('tournament_id','=',tournament_id),('state','in',['scheduled'])]" on_change="onchange_match(match_id)"/>
+                                    <field name="home_team_id" string="Local"/>
+                                    <field name="home_score" string="Goles Local"/>
+                                    <field name="visitor_team_id" string="Visita"/>
+                                    <field name="visitor_score" string="Goles Visita"/>
+                                </tree>
+                                <form string="Líneas de Apuesta">
+                                    <field name="name" string="Nombre"/>
+                                    <field name="tournament_id" string="Torneo"/>
+                                    <field name="match_id" string="Partido" domain="[('tournament_id','=',tournament_id)]"/>
+                                    <field name="home_team_id" string="Local"/>
+                                    <field name="home_score" string="Goles Local"/>
+                                    <field name="visitor_team_id" string="Visita"/>
+                                    <field name="visitor_score" string="Goles Visita"/>
+                                </form>
+                            </field>
+                        </group>
                     </group>
-                    <group>
-                        <field name="date" string="Fecha"/>
-                        <field name="bet_rule_id" string="Formato de Puntuación"/>
-                    </group>
-                    <group string="Líneas de Apuesta" colspan="4">
-                        <field name="bet_lines" nolabel="1">
-                            <tree editable="bottom">
-                                <field name="tournament_id" string="Torneo"/>
-                                <field name="match_id" string="Partido" domain="[('tournament_id','=',tournament_id),('state','in',['scheduled'])]" on_change="onchange_match(match_id)"/>
-                                <field name="home_team_id" string="Local"/>
-                                <field name="home_score" string="Goles Local"/>
-                                <field name="visitor_team_id" string="Visita"/>
-                                <field name="visitor_score" string="Goles Visita"/>
-                            </tree>
-                            <form string="Líneas de Apuesta">
-                                <field name="name" string="Nombre"/>
-                                <field name="tournament_id" string="Torneo"/>
-                                <field name="match_id" string="Partido" domain="[('tournament_id','=',tournament_id)]"/>
-                                <field name="home_team_id" string="Local"/>
-                                <field name="home_score" string="Goles Local"/>
-                                <field name="visitor_team_id" string="Visita"/>
-                                <field name="visitor_score" string="Goles Visita"/>
-                            </form>
-                        </field>
-                    </group>
-                </group>
+                </sheet>
             </form>
         </field>
     </record>
@@ -52,7 +58,6 @@
                 <field name="bet_group_id" string="Grupo"/>
                 <field name="name" string="Referencia"/>
                 <field name="partner_id" string="Nombre"/>
-                <field name="bet_rule_id" string="Tipo de Apuesta"/>
                 <field name="date" string="Fecha de Creacion"/>
             </tree>
         </field>
@@ -129,27 +134,31 @@
         <field name="type">form</field>
         <field name="arch" type="xml">
             <form string="Grupo de Apuesta">
-                <group>
+                <sheet>
                     <group>
-                        <field name="name"/>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="bet_rule_id" string="Formato de Puntuación" required="1"/>
+                            <fiedl name="tournament_id" required="1"/>
+                        </group>
+                        <group>
+                            <field name="access" string="Acceso"/>
+                            <field name="user_id" string="Propietario" attrs="{'required':[('access','=','private')]}"/>
+                        </group>
+                        <group string="Tabla de Posiciones" colspan="4">
+                            <field name="standing_ids" nolabel="1" colspan="4" attrs="{'invisible':[('standing_ids','=',[])]}" readonly="1">
+                                <tree create="0" editable="bottom">
+                                    <field name="sequence" string ="Rank"/>
+                                    <field name="bet_id" string ="Referencia"/>
+                                    <field name="partner_id" string ="Nombre"/>
+                                    <field name="points" string ="Puntos"/>
+                                </tree>
+                            </field>
+                            <button name="update_ranking" type="object" string="Actualizar" attrs="{'invisible':[('standing_ids','=',[])]}"/>
+                            <button name="load_standings" type="object" string="Cargar Tabla de posiciones" attrs="{'invisible':[('standing_ids','!=',[])]}"/>
+                        </group>
                     </group>
-                    <group>
-                        <field name="access" string="Acceso"/>
-                        <field name="user_id" string="Propietario" attrs="{'required':[('access','=','private')]}"/>
-                    </group>
-                    <group string="Tabla de Posiciones" colspan="4">
-                        <field name="standing_ids" nolabel="1" colspan="4" attrs="{'invisible':[('standing_ids','=',[])]}" readonly="1">
-                            <tree create="0" editable="bottom">
-                                <field name="sequence" string ="Rank"/>
-                                <field name="bet_id" string ="Referencia"/>
-                                <field name="partner_id" string ="Nombre"/>
-                                <field name="points" string ="Puntos"/>
-                            </tree>
-                        </field>
-                        <button name="update_ranking" type="object" string="Actualizar" attrs="{'invisible':[('standing_ids','=',[])]}"/>
-                        <button name="load_standings" type="object" string="Cargar Tabla de posiciones" attrs="{'invisible':[('standing_ids','!=',[])]}"/>
-                    </group>
-                </group>
+                </sheet>
             </form>
         </field>
     </record>
@@ -161,6 +170,9 @@
         <field name="arch" type="xml">
             <tree string="Grupo de Apuesta">
                 <field name="name"/>
+                <field name="tournament_id"/>
+                <field name="bet_rule_id" string="Regla"/>
+
 <!--
                 <field name="first" string="Primer Lugar"/>
                 <field name="second" string="Segundo Lugar"/>
@@ -179,6 +191,7 @@
         <field name="arch" type="xml">
             <tree string="Grupo de Apuesta" create="false" delete="false">
                 <field name="name"/>
+                <field name="bet_rule_id" string="Regla"/>
                 <field name="first" string="Primer Lugar"/>
                 <field name="second" string="Segundo Lugar"/>
                 <field name="third" string="Tercer Lugar"/>

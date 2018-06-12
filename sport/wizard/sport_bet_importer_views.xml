@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="sport_bet_importer_form_wizard" model="ir.ui.view">
+        <field name="name">sport.bet.importer.form.wizard</field>
+        <field name="model">sport.bet.importer</field>
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+            <form string="Upload your bet">
+                <group>
+                    <group>
+                        <field name="name" required="1"/>
+                        <field name="file" required="1"/>
+                    </group>
+                    <group>
+                        <field name="tournament_id"/>
+                        <field name="bet_group_id"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Upload" name="action_import" type="object" class="btn-primary"/>
+                    <button string="Discard" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window name="Upload your bet"
+        res_model="sport.bet.importer"
+        src_model="sport.bet"
+        view_mode="form"
+        target="new"
+        key2="client_action_relate"
+        id="sport_bet_importer_wz_action"
+        context="{
+            'default_tournament_id': ref('sport.sport_tournament_russia2018'),
+        }"
+    />
+</odoo>
+

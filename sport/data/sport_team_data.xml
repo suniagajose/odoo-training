@@ -187,7 +187,7 @@
         <field name="country_id" ref="base.ru"/>
     </record>
     <record id='football_team_kor' model='sport.team'>
-        <field name='name'>REPÚBLICA DE COREA</field>
+        <field name='name'>COREA DEL SUR</field>
         <field name='code'>KOR</field>
         <field name='sport_id' ref='sport_sport_football'/>
         <field name="country_id" ref="base.kr"/>
@@ -199,7 +199,7 @@
         <field name="country_id" ref="base.eg"/>
     </record>
     <record id='football_team_sar' model='sport.team'>
-        <field name='name'>ARABIA SAUDI</field>
+        <field name='name'>ARABIA SAUD.</field>
         <field name='code'>SAR</field>
         <field name='sport_id' ref='sport_sport_football'/>
         <field name="country_id" ref="base.sa"/>
@@ -211,7 +211,7 @@
         <field name="country_id" ref="base.ma"/>
     </record>
     <record id='football_team_per' model='sport.team'>
-        <field name='name'>PERU</field>
+        <field name='name'>PERÚ</field>
         <field name='code'>PER</field>
         <field name='sport_id' ref='sport_sport_football'/>
         <field name="country_id" ref="base.pe"/>
@@ -241,13 +241,13 @@
         <field name="country_id" ref="base.se"/>
     </record>
     <record id='football_team_pan' model='sport.team'>
-        <field name='name'>PANAMA</field>
+        <field name='name'>PANAMÁ</field>
         <field name='code'>PAN</field>
         <field name='sport_id' ref='sport_sport_football'/>
         <field name="country_id" ref="base.pa"/>
     </record>
     <record id='football_team_tun' model='sport.team'>
-        <field name='name'>TUNEZ</field>
+        <field name='name'>TÚNEZ</field>
         <field name='code'>TUN</field>
         <field name='sport_id' ref='sport_sport_football'/>
         <field name="country_id" ref="base.tn"/>

@@ -23,6 +23,7 @@ Details coming soon.
         # Views
         'views/sport_views.xml',
         'views/sport_bet_views.xml',
+        'wizard/sport_bet_importer_views.xml',
     ],
     'installable' : True,
     'application' : True,
