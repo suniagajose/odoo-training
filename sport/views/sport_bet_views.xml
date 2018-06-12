@@ -139,7 +139,7 @@
                         <group>
                             <field name="name" required="1"/>
                             <field name="bet_rule_id" string="Formato de Puntuación" required="1"/>
-                            <fiedl name="tournament_id" required="1"/>
+                            <field name="tournament_id" required="1"/>
                         </group>
                         <group>
                             <field name="access" string="Acceso"/>

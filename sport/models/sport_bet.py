@@ -213,7 +213,7 @@ class SportBetGroup(models.Model):
     bet_ids = fields.One2many('sport.bet', 'bet_group_id', 'Bets')
     standing_ids = fields.One2many('sport.bet.standing', 'bet_group_id', 'Standing')
     bet_rule_id = fields.Many2one('sport.bet.rule', 'Rule')
-    tournament_id = fields.Many2one(relation='sport.tournament', string='Tournament')
+    tournament_id = fields.Many2one('sport.tournament', string='Tournament')
     user_id = fields.Many2one('res.users', 'User Owner')
     first = fields.Many2one('sport.bet', compute='_compute_first', string='1st place')
     second = fields.Many2one('sport.bet', compute='_compute_second', string='2nd place')
