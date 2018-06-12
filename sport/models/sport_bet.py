@@ -4,6 +4,7 @@ from operator import attrgetter
 from odoo.exceptions import ValidationError
 from odoo import api, fields, models, _
 
+import os
 import base64
 
 try:
@@ -76,7 +77,8 @@ class SportBet(models.Model):
     bet_lines = fields.One2many('sport.bet.line', 'bet_id', 'Matches')
     bet_group_id = fields.Many2one('sport.bet.group', 'Group', required=True)
     date = fields.Date('Application Date', default=fields.Date.context_today, required=True)
-    file = fields.Binary('File', help="File to check and/or import, raw binary (not base64)")
+    data = fields.Binary('File')
+    filename = fields.Char('File Name')
 
     @api.model
     def get_team_id_by_name(self, name, sport=None):
@@ -90,16 +92,20 @@ class SportBet(models.Model):
     @api.multi
     def action_import(self):
         self.ensure_one()
-        if self.bet_lines or not self.file:
+        if self.bet_lines or not self.data or not self.filename:
             return True
-        content = base64.b64decode(self.file)
+        fileformat = os.path.splitext(self.filename)[-1][1:].lower()
+        if fileformat not in ['xls', 'xlsx']:
+            raise ValidationError(_('Wrong file extension!!'))
+        content = base64.b64decode(self.data)
         book = xlrd.open_workbook(file_contents=content)
+        bet_lines = []
         for i in range(1, 65):
             duplex = [(m, GROUP4MATCH[m].index(i)) for m in GROUP4MATCH if i in GROUP4MATCH[m]]
             letter = duplex[0][0]
             indexx = (duplex[0][1] + 6) if letter == 'PO' else duplex[0][1]
             sheet = book.sheet_by_name(letter)
-            line_vals = {
+            vals = {
                 n: 'team' in n and self.get_team_id_by_name(
                     sheet.cell_value(
                         COORD4MATCH[n][indexx][0],
@@ -107,17 +113,19 @@ class SportBet(models.Model):
                     sheet.cell_value(
                         COORD4MATCH[n][indexx][0],
                         COORD4MATCH[n][indexx][1]) for n in COORD4MATCH}
-            line_vals.update({
+            vals.update({
                 'bet_id': self.id,
                 'match_id': self.env.ref('sport.russia2018_match_%d' % i).id
             })
-            self.env['sport.bet.line'].create(line_vals)
-        return True
+            bet_lines += [(0, 0, vals)]
+        return self.write({'bet_lines': bet_lines})
 
     @api.multi
     def action_reset(self):
         self.ensure_one()
         self.bet_lines.unlink()
+        self.data = False
+        self.filename = False
         return True
 
 
