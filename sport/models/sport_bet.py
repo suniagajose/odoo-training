@@ -6,6 +6,9 @@ from odoo import api, fields, models, _
 
 import os
 import base64
+import logging
+
+_logger = logging.getLogger(__name__)
 
 try:
     import xlrd
@@ -252,6 +255,12 @@ class SportBetStanding(models.Model):
         return teams
 
     @api.multi
+    def get_points(self):
+        self.ensure_one()
+        self.with_context(show_logger=True)._compute_points()
+        return True
+
+    @api.multi
     @api.depends('bet_id.bet_lines.match_id.state')
     def _compute_points(self):
         # fill dict with classified teams
@@ -278,10 +287,12 @@ class SportBetStanding(models.Model):
                         match.visitor_team_id != line.visitor_team_id):
                     continue
 
-                # check cases that apply points calculation
+                # check cases that apply points calculation (score)
                 if match.home_score == line.home_score and match.visitor_score == line.visitor_score:
                     points += match.knockout and rule.score_in_ko or rule.score
-                elif match.diff > 0 and line.home_score > line.visitor_score:
+
+                # check cases that apply points calculation (result)
+                if match.diff > 0 and line.home_score > line.visitor_score:
                     points += match.knockout and rule.result_in_ko or rule.result
                     points += stage == 'final' and rule.winner_final or 0
                 elif match.diff < 0 and line.home_score < line.visitor_score:
@@ -290,10 +301,16 @@ class SportBetStanding(models.Model):
                 elif match.diff == 0 and line.home_score == line.visitor_score:
                     points += match.knockout and rule.result_in_ko or rule.result
 
+                if self._context.get('show_logger'):
+                    _logger.info('Match %d >>>>>>>> Points %d', match.sequence, points)
+
             # increase points with teams predicted successfully
             for stage in STAGES:
                 teams_success = list(set(classified_teams[stage]).intersection(set(teams[stage]) ) )
-                points += len(teams_success) * eval('rule.advance_%s' % stage)
+                stage_points = len(teams_success) * eval('rule.advance_%s' % stage)
+                if self._context.get('show_logger'):
+                    _logger.info('Stage %s, Points %d, Teams %s', stage, stage_points, teams_success)
+                points += stage_points
             standing.points = points
 
     @api.model

@@ -158,6 +158,7 @@
                                     <field name="bet_id" string ="Referencia"/>
                                     <field name="partner_id" string ="Nombre"/>
                                     <field name="points" string ="Puntos"/>
+                                    <button name="get_points" type="object" icon="fa-refresh" groups="base.group_no_one"/>
                                 </tree>
                             </field>
                             <button name="update_ranking" type="object" string="Actualizar" attrs="{'invisible':[('standing_ids','=',[])]}"/>

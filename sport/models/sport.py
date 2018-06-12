@@ -174,7 +174,7 @@ class SportRoundClassified(models.Model):
         for classified in self:
             standing = classified.round_id.standing_ids.filtered(
                 lambda std: std.sequence == classified.position)
-            classified.team_id = standing.team_id if standing else False
+            classified.team_id = standing[0].team_id if standing else False
 
     @api.multi
     @api.depends('position', 'round_id.name')
@@ -469,6 +469,6 @@ class SportMatch(models.Model):
                     # TODO: change that for next round with +1 matches
                     if next_round.matches == 1:
                         next_match = next_round.match_ids
-                        next_match.write({key: team_id})
-                        next_round.write({'team_ids': [(4,team_id)]})
+                        next_match.write({key: team_id.id})
+                        next_round.write({'team_ids': [(4,team_id.id)]})
         return res

@@ -409,7 +409,7 @@
         <field name='tournament_id' ref="sport_tournament_russia2018"/>
         <field name='round_id' ref="russia2018_grupo_e"/>
         <field name='home_team_id' ref="football_team_rsd"/>
-        <field name='visitor_team_id' ref="football_team_rsd"/>
+        <field name='visitor_team_id' ref="football_team_bra"/>
     </record>
     <record id='russia2018_match_42' model='sport.match'>
         <field name='sequence'>42</field>
