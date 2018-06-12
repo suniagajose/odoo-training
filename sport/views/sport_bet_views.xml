@@ -8,19 +8,23 @@
         <field name="arch" type="xml">
             <form string="Apuestas">
                 <header>
-                    <button string="Import Document" class="btn-primary" type="object" name="action_import"/>
-                    <button string="Clean Bet" type="object" name="action_reset" groups="base.group_no_one"/>
+                    <button string="Cargar Documento" class="btn-primary" type="object" name="action_import"/>
+                    <button string="Reestablecer" type="object" name="action_reset" groups="base.group_no_one"/>
                 </header>
                 <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
                     <group>
                         <group>
-                            <field name="name" string="Referencia"/>
+                            <field name="partner_id" string="Propietario"/>
                             <field name="bet_group_id" string="Grupo"/>
-                            <field name="ir_attachment_id" string="Related Document"/>
                         </group>
                         <group>
-                            <field name="date" string="Fecha"/>
-                            <field name="partner_id" string="Nombre"/>
+                            <field name="date" string="Fecha de aplicación"/>
+                            <field name="file" string="Documento relacionado"/>
                         </group>
                         <group string="Líneas de Apuesta" colspan="4" attrs="{'invisible': [('bet_lines', '=', [])]}">
                             <field name="bet_lines" nolabel="1" readonly="1">
@@ -137,11 +141,12 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="name" required="1"/>
+                            <field name="name" string="Nombre" required="1"/>
                             <field name="bet_rule_id" string="Formato de Puntuación" required="1"/>
-                            <field name="tournament_id" required="1"/>
+                            <field name="tournament_id" string="Torneo" required="1"/>
                         </group>
                         <group>
+                            <field name="sequence_id" string="Secuencia de Apuestas" required="1"/>
                             <field name="access" string="Acceso"/>
                             <field name="user_id" string="Propietario" attrs="{'required':[('access','=','private')]}"/>
                         </group>

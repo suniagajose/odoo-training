@@ -39,7 +39,6 @@ COORD4MATCH = {
 class SportBet(models.Model):
     _name = "sport.bet"
     _description = "Bet"
-    _rec_name = "partner_name"
     _order = 'bet_group_id, date'
 
     @api.multi
@@ -60,6 +59,8 @@ class SportBet(models.Model):
     @api.model
     def create(self, vals):
         bet = super(SportBet, self).create(vals)
+        if bet.bet_group_id.sequence_id:
+            bet.write({'name': bet.bet_group_id.sequence_id.next_by_id()})
         bet_group_id = self.env['sport.bet.group']
         standings = [(0,0, {
             'bet_group_id': bet.bet_group_id.id,
@@ -70,13 +71,12 @@ class SportBet(models.Model):
         bet_group_id.update_ranking()
         return bet
 
-    name = fields.Char('Name', size=64, required=True, help="This name must be unique to indentify the ticket")
-    partner_id = fields.Many2one('res.partner', 'Ticket Owner')
-    partner_name = fields.Char(related='partner_id.name', string='Nombre', store=True)
+    name = fields.Char('Name', size=64, required=True, help="This name must be unique to indentify the ticket", default="New")
+    partner_id = fields.Many2one('res.partner', 'Ticket Owner', default=lambda self: self.env.user.partner_id, required=True)
     bet_lines = fields.One2many('sport.bet.line', 'bet_id', 'Matches')
-    bet_group_id = fields.Many2one('sport.bet.group', 'Group')
-    date = fields.Date('Creation Date', required=True)
-    ir_attachment_id = fields.Many2one('ir.attachment', string='Related attachment', required=True, ondelete='cascade')
+    bet_group_id = fields.Many2one('sport.bet.group', 'Group', required=True)
+    date = fields.Date('Application Date', default=fields.Date.context_today, required=True)
+    file = fields.Binary('File', help="File to check and/or import, raw binary (not base64)")
 
     @api.model
     def get_team_id_by_name(self, name, sport=None):
@@ -90,14 +90,10 @@ class SportBet(models.Model):
     @api.multi
     def action_import(self):
         self.ensure_one()
-        mimetype = 'spreadsheetml.sheet'
-        content = base64.b64decode(self.ir_attachment_id.datas)
-        book = xlrd.open_workbook(file_contents=content)
-        if self.bet_lines:
+        if self.bet_lines or not self.file:
             return True
-        if (not self.ir_attachment_id or
-                mimetype not in self.ir_attachment_id.mimetype):
-            raise ValidationError(_('Documento Invalido'))
+        content = base64.b64decode(self.file)
+        book = xlrd.open_workbook(file_contents=content)
         for i in range(1, 65):
             duplex = [(m, GROUP4MATCH[m].index(i)) for m in GROUP4MATCH if i in GROUP4MATCH[m]]
             letter = duplex[0][0]
@@ -215,6 +211,7 @@ class SportBetGroup(models.Model):
     bet_rule_id = fields.Many2one('sport.bet.rule', 'Rule')
     tournament_id = fields.Many2one('sport.tournament', string='Tournament')
     user_id = fields.Many2one('res.users', 'User Owner')
+    sequence_id = fields.Many2one('ir.sequence', 'Bet Sequence', required=True)
     first = fields.Many2one('sport.bet', compute='_compute_first', string='1st place')
     second = fields.Many2one('sport.bet', compute='_compute_second', string='2nd place')
     third = fields.Many2one('sport.bet', compute='_compute_third', string='3rd place')
